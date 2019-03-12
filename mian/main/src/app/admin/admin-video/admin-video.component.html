@@ -1,0 +1,29 @@
+<div class="full-container wrapper-video">
+  <h1>视频管理面板</h1>
+  <nav>
+    <a routerLink="/admin/new-video">添加视频</a>
+  </nav>
+  <main>
+    <table class="data-table">
+      <tr>
+        <td>标题</td>
+        <td class="td-status">状态</td>
+        <td class="td-buttons"></td>
+      </tr>
+      <tr *ngFor="let video of videoList">
+        <td>{{ video.title }}</td>
+        <td [class.published]="video.published" [class.un-published]="!video.published">{{ video.published ? '已发布' : '未发布' }}</td>
+        <td class="td-buttons">
+          <button 
+            class="btn" 
+            [class.published]="video.published" 
+            [class.un-published]="!video.published"
+            (click)="handlePublish(video)"
+          >{{ video.published ? '取消发布' : '发布' }}</button>
+          <button class="btn edit" (click)="edit(video)">编辑</button>
+          <button class="btn delete" (click)="handleRemove(video)">删除</button>
+        </td>
+      </tr>
+    </table>
+  </main>
+</div>

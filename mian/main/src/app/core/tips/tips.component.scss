@@ -1,0 +1,33 @@
+@import '../../../assets/scss/unit.scss';
+.tips {
+    position: fixed;
+    right: 10px;
+    bottom: 20%;
+    // opacity: 0;
+    margin-left: 900px;
+    transition: all 0.3s ease-out;
+    .tipsitem {
+        width: px2rem(18);
+        height: px2rem(18);
+        margin: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        a {
+            display: block;
+            height: 100%;
+        }
+        &.store {
+            @include bg-image('../../../assets/images/home/store');
+        }
+        &.github {
+            @include bg-image('../../../assets/images/home/github');
+        }
+        &.up {
+            @include bg-image('../../../assets/images/home/up');
+        }
+    }
+}
+.show {
+    right: 20px;
+    opacity: 1;
+}

@@ -1,0 +1,27 @@
+<div class="wrapper--property--panel" [class.show]="(selectedUnit$ | async) !== null" (mousedown)="stopPropagation($event)" #wrapperPropertyPanel>
+  <p class="property name">{{ (selectedUnit$ | async)?.name }}</p>
+  
+  <table>
+    <tr>
+      <td>
+        <span>{{ 'PORT' | translate }}</span>
+      </td>
+      <td>
+        <select [value]="(selectedUnit$ | async)?.port" (change)="setUnitPort($event)">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+      </td>
+    </tr>
+    <tr *ngIf="(selectedUnit$ | async)?.type === 'neopixel'">
+      <td>
+        <span>{{ 'COUNT' | translate }}</span>
+      </td>
+      <td>
+        <input type="text" spellcheck="false" [value]="(selectedUnit$ | async)?.count" (input)="setUnitCount($event)">
+      </td>
+    </tr>
+  </table>
+
+</div>

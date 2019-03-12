@@ -1,0 +1,60 @@
+<td class="property-key">
+  {{ name + ':' }}
+</td>
+<td class="property-value" [ngSwitch]="key">
+
+  <input 
+    *ngSwitchCase="'color'"
+    readonly="readonly"
+    spellcheck="false"
+    [ngModel]="value" [cpOKButton]="'Ok'" [style.background]="value" [cpPosition]="'bottom'" [(colorPicker)]="value"
+    [cpPositionOffset]="'-20%'"
+    [cpOutputFormat]="'hex'"
+    (colorPickerChange)="changePropertyEvent($event)"
+  />
+
+  <input 
+    *ngSwitchCase="'borderColor'"
+    readonly="readonly"
+    spellcheck="false"
+    [ngModel]="value" [cpOKButton]="'Ok'" [style.background]="value" [cpPosition]="'bottom'" [(colorPicker)]="value"
+    [cpPositionOffset]="'-20%'"
+    [cpOutputFormat]="'hex'"
+    (colorPickerChange)="changePropertyEvent($event)"
+  />
+
+  <input 
+    *ngSwitchCase="'backgroundColor'"
+    readonly="readonly"
+    spellcheck="false"
+    [ngModel]="value" [cpOKButton]="'Ok'" [style.background]="value" [cpPosition]="'bottom'" [(colorPicker)]="value"
+    [cpPositionOffset]="'-20%'"
+    [cpOutputFormat]="'hex'"
+    (colorPickerChange)="changePropertyEvent($event)"
+  />
+
+  <select *ngSwitchCase="'visibility'" [value]="value" (change)="changePropertyEvent($event)">
+    <option value="true">{{ 'True' }}</option>
+    <option value="false">{{ 'False' }}</option>
+  </select>
+
+  <select *ngSwitchCase="'font'" [value]="value" (change)="changePropertyEvent($event)">
+    <option value="lcd.FONT_Default">Default</option>
+    <option value="lcd.FONT_DefaultSmall">Default Small</option>
+    <option value="lcd.FONT_Ubuntu">Ubuntu-C</option>
+    <option value="lcd.FONT_Comic">Comic</option>
+    <option value="lcd.FONT_DejaVu18">DejaVuSans 18</option>
+    <option value="lcd.FONT_DejaVu24">DejaVuSans 24</option>
+    <option value="lcd.FONT_DejaVu40">DejaVuSans 40</option>
+    <option value="lcd.FONT_DejaVu56">DejaVuSans 56</option>
+    <option value="lcd.FONT_DejaVu72">DejaVuSans 72</option>
+  </select>
+
+  <select *ngSwitchCase="'imagePath'" [value]="value" (change)="changePropertyEvent($event)" #selectBox>
+    <option value="default.jpg">default.jpg</option>
+    <option *ngFor="let file of (deviceInfo$ | async)?.resources" [value]="file.filename">{{ file.filename }}</option>
+  </select>
+  <a class="btn--reload-image" *ngIf="key=='imagePath'" (click)="loadImg()">{{ loadingText }}</a>
+
+  <input *ngSwitchDefault type="text" spellcheck="false" [value]="value" (input)="changePropertyEvent($event)" [class.patten]="ispatten">
+</td>

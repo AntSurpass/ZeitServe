@@ -1,0 +1,36 @@
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <h1 class="title">M5Stack管理平台</h1>
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group [nzPrefix]="prefixUser">
+        <input type="text" nz-input formControlName="username" placeholder="用户名">
+      </nz-input-group>
+      <nz-form-explain 
+        *ngIf="validateForm.get('username').dirty && validateForm.get('username').errors"
+      >
+        <span>请输入用户名</span>
+      </nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group [nzPrefix]="prefixLock">
+        <input type="password" nz-input formControlName="password" placeholder="密码">
+      </nz-input-group>
+      <nz-form-explain 
+        *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors"
+      >
+        <span>请输入密码</span>
+      </nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button class="login-form-button" [nzType]="'primary'">
+        <span>登陆</span>
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
+<ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>

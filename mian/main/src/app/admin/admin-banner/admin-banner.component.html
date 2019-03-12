@@ -1,0 +1,126 @@
+<div class="full-container wrapper-banner">
+  <h1>Banner管理面板</h1>
+  <main>
+    <!-- 产品页面Banner -->
+    <div class="form-image" >
+      <h3>产品页面Banner</h3>
+      <img 
+        class="img-preview" 
+        src="./images/banner-product.jpg"
+        (click)="handleImgClick($event, imageType.productBanner, productBannerBox)" 
+        (error)="handleError($event)" 
+        alt="点击此处上传图片"
+      >
+      <input class="hidden-box" accept="image/jpeg" type="file" #productBannerBox>
+    </div>
+
+    <!-- 新闻页面Banner -->
+    <div class="form-image">
+      <h3>新闻页面Banner</h3>
+      <img 
+        class="img-preview" 
+        src="./images/banner-news.jpg"
+        (click)="handleImgClick($event, imageType.newsBanner, newsBannerBox)" 
+        (error)="handleError($event)" 
+        alt="点击此处上传图片"
+      >
+      <input class="hidden-box" type="file" #newsBannerBox>
+    </div>
+
+    <!-- 联系页面Banner -->
+    <div class="form-image">
+      <h3>联系页面Banner</h3>
+      <img 
+        class="img-preview" 
+        src="./images/banner-contact.jpg"
+        (click)="handleImgClick($event, imageType.contact, contactBannerBox)" 
+        (error)="handleError($event)" 
+        alt="点击此处上传图片"
+      >
+      <input class="hidden-box" type="file" #contactBannerBox>
+    </div>
+
+    <!-- UIFlow页面Banner -->
+    <div class="form-image">
+      <h3>UIFlow页面Banner</h3>
+      <img 
+        class="img-preview" 
+        src="./images/banner-uiflow.jpg"
+        (click)="handleImgClick($event, imageType.uiflow, uiflowBannerBox)" 
+        (error)="handleError($event)" 
+        alt="点击此处上传图片"
+      >
+      <input class="hidden-box" type="file" #uiflowBannerBox>
+    </div>
+
+    <!-- STEM页面Banner -->
+    <div class="form-image">
+      <h3>STEM页面Banner</h3>
+      <img 
+        class="img-preview" 
+        src="./images/banner-stem.jpg"
+        (click)="handleImgClick($event, imageType.stem, stemBannerBox)" 
+        (error)="handleError($event)" 
+        alt="点击此处上传图片"
+      >
+      <input class="hidden-box" type="file" #stemBannerBox>
+    </div>
+
+    <!-- UIFlow Link Banner -->
+    <div class="form-image">
+      <h3>UIFlow Link Banner</h3>
+      <img 
+        class="img-preview" 
+        src="./images/link-uiflow.jpg"
+        (click)="handleImgClick($event, imageType.linkUiflow, uiflowLinkBox)" 
+        (error)="handleError($event)" 
+        alt="点击此处上传图片"
+      >
+      <input class="hidden-box" type="file" #uiflowLinkBox>
+    </div>
+
+    <!-- STEM Link Banner -->
+    <div class="form-image">
+      <h3>STEM Link Banner</h3>
+      <img 
+        class="img-preview" 
+        src="./images/link-stem.jpg"
+        (click)="handleImgClick($event, imageType.linkStem, stemLinkBox)" 
+        (error)="handleError($event)" 
+        alt="点击此处上传图片"
+      >
+      <input class="hidden-box" type="file" #stemLinkBox>
+    </div>
+
+    <!-- 首页案例图片 -->
+    <div class="list-case">
+      <h3>首页案例图片</h3>
+      <ul>
+        <li class="case-box" *ngFor="let img of imageList">
+          <img [src]="img.base64 == '' ? img.name : img.base64" alt="case">
+          <button class="del-case" (click)="handleDeleteImg(imageType.case, img)"></button>
+        </li>
+        <li class="case-box">
+          <button class="add-case" (click)="handleInsertImgs(imageType.case, caseBox)">添加案例</button>
+          <input class="hidden-box" type="file" #caseBox>
+        </li>
+      </ul>
+    </div>
+
+     <!-- 首页案例图片 -->
+     <div class="list-case">
+      <h3>商标图片</h3>
+      <ul>
+        <li class="case-box" *ngFor="let img of brandList">
+          <img [src]="img.base64 == '' ? img.name : img.base64" alt="case">
+          <button class="del-case" (click)="handleDeleteImg(imageType.brand, img)"></button>
+        </li>
+        <li class="case-box">
+          <button class="add-case" (click)="handleInsertImgs(imageType.brand, brandBox)">添加商标</button>
+          <input class="hidden-box" type="file" #brandBox>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+</div>

@@ -1,0 +1,33 @@
+<div class="wrapper-admin">
+  <header>
+    <span>M5Stack后台管理系统</span>
+  </header>
+  
+  <main>
+    
+    <nav class="sidebar">
+      <a routerLink="/admin/home" [class.active]="currentUrl==='/admin/home'||currentUrl==='/admin'">留言面板</a>
+
+      <a routerLink="/admin/news" 
+        [class.active]="currentUrl.indexOf('/admin/news') > -1"
+      >资讯面板</a>
+
+      <a routerLink="/admin/product" 
+        [class.active]="currentUrl.indexOf('/admin/product') > -1"
+      >产品面板</a>
+
+      <a routerLink="/admin/banner" 
+        [class.active]="currentUrl==='/admin/banner'"
+      >图片管理</a>
+
+      <a routerLink="/admin/video" 
+        [class.active]="currentUrl.indexOf('/admin/video') > -1"
+      >视频管理</a>
+    </nav>
+
+    <div class="wrapper-content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+</div>

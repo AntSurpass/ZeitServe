@@ -1,0 +1,120 @@
+<div class="container">
+  <h1 class="title">{{mode==='create'?'新增资讯':'修改资讯内容'}}</h1>
+  <form nz-form [formGroup]="validateForm">
+    
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="type">
+        <span>资讯类型</span>
+      </nz-form-label>
+      <nz-form-control>
+        <nz-radio-group formControlName="type" id="type" [nzButtonStyle]="'solid'">
+          <label nz-radio-button nzValue="1">博客</label>
+          <label nz-radio-button nzValue="2">视频</label>
+        </nz-radio-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="title">
+        <span>标题</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="title" id="title">
+        <nz-form-explain *ngIf="validateForm.get('title').dirty && validateForm.get('title').errors">
+          <span>标题不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="create_time">
+        <span>发布时间</span>
+      </nz-form-label>
+      <nz-form-control>
+        <nz-date-picker formControlName="create_time" id="create_time"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="description" nzRequired>
+        <span>相关描述</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="description" formControlName="description">
+        <nz-form-explain *ngIf="validateForm.get('description').dirty && validateForm.get('description').errors">
+          <span>描述不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="tab">
+        <span>标签(英文逗号分隔)</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="tab" formControlName="tab">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="author">
+        <span>作者</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="author" formControlName="author">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="link" nzRequired>
+        <span>论坛链接</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="link" formControlName="link">
+        <nz-form-explain *ngIf="validateForm.get('link').dirty && validateForm.get('link').errors">
+          <span>链接不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="video_link">
+        <span>视频链接</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="video_link" formControlName="video_link">
+        <nz-form-explain *ngIf="validateForm.get('video_link').dirty && validateForm.get('video_link').errors">
+          <span>链接不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label>
+        <span>封面图片</span>
+      </nz-form-label>
+      <nz-form-control>
+        <nz-upload 
+          class="avatar-uploader"
+          nzAccept="image/png,image/jpeg,image/gif,image/bmp"
+          nzName="cover"
+          nzListType="picture-card"
+          [nzAction]="postUrl"
+          [nzShowUploadList]="false"
+          [nzBeforeUpload]="beforeUpload"
+          [nzHeaders]="headers"
+          (nzChange)="handleChange($event)"
+        >
+          <ng-container *ngIf="!avatarUrl">
+            <i nz-icon type="plus"></i>
+            <div class="ant-upload-text">Upload</div>
+          </ng-container>
+          <img [src]="avatarUrl" class="cover">
+        </nz-upload>
+      </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button class="form-button publish" [nzType]="'primary'" (click)="submitForm(true)">发布</button>
+    <button nz-button class="form-button save" [nzType]="'primary'" (click)="submitForm(false)">保存</button>
+  </form>
+</div>

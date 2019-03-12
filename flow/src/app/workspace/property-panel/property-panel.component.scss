@@ -1,0 +1,26 @@
+.wrapper--property--panel {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.88);
+    border: 1px solid #666;
+    z-index: 1000001;
+    padding: 8px;
+    border-radius: 2px;
+
+    &.show {
+        display: block;
+    }
+}
+.header {
+    display: flex;
+    .property.name {
+        flex: 1;
+        font-size: 22px;
+        font-family: Arial;
+    }
+    .close {
+        padding-left: 20px;
+    }
+}

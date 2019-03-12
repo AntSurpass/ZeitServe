@@ -1,0 +1,72 @@
+@import '../../../assets/scss/unit.scss';
+.container {
+    max-width: 1200px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    display: flex;
+    aside {
+       width: 260px;
+       h3 {
+        margin: 80px 0 50px 0;
+        line-height: 34px;
+        font-size: 34px;
+        font-family: "Technical";
+       }
+       ul {
+          padding: 0;
+       }
+       li {
+           list-style: none;
+           margin-bottom: 24px;
+           a {
+               text-decoration: none;
+               color: #999;
+               &.active {
+                   color: #000;
+                   font-weight: 700;
+               }
+           }
+       }
+    }
+    main {
+        display: block;
+        margin-top: 160px;
+        flex: 1;
+    }
+}
+
+
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: px2rem(40);
+    width: 100%;
+    background-color: #000;
+    z-index: 1;
+}
+.banner1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: px2rem(40);
+    width: 100%;
+}
+.bannerImg {
+    overflow: hidden;
+    img {
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px) {}
+
+@media only screen and (min-width:320px) and (max-width:767px) {
+  .container {
+      aside {
+          display: none;
+      }
+  }
+}

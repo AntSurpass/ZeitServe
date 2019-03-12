@@ -1,0 +1,41 @@
+<div class="wrapper--unit-modal">
+  <div class="unit-modal">
+    <header>
+      <p>{{ 'UNITS' | translate}}</p>
+    </header>
+
+    <ul class="list-unit">
+      <li class="item-unit" *ngFor="let unit of category" (click)="selectUnit(unit)" [class.disable]="unit.hidden || unit.stickNone=== isstick" [class.isnone]="unit.stickType === isstick">
+        <input class="selectUint" type="checkbox" value="{{unit.type}}" (change)="handle($event)" id={{unit.type}}/>
+        <span class="checkbox">
+          <img  src="../../../assets/images/check.png" alt="checked">
+        </span>
+        <span class="help" (click)="toDocs(unit, $event)">
+              <img src="../../../assets/images/units/wenhaow.png" alt="help">
+        </span>
+        <label for="{{unit.type}}" class="into">
+            <img [src]="'../../../assets/images/units/' + unit.icon" alt="" class="unitImg">
+        </label>
+        <div class="config-unit" *ngIf="selectedUnit === unit" (click)="stopPropagation($event)">
+          <div class="unit-param">
+            <p>{{ 'PORT' | translate }}:</p>
+            <select [value]="unit.port" (change)="setUnit(unit.type,$event, 'port')">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+            </select>
+          </div>
+          <div class="unit-param" *ngIf="unit.hasOwnProperty('count')">
+            <p>{{ 'COUNT'| translate }}:</p>
+            <input type="text" [value]="unit.count" (input)="setUnit(unit.type,$event, 'count')">
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <footer>
+      <button class="btn cancel" (click)="cancel()">{{ 'CANCEL' | translate }}</button>
+      <button class="btn ok" (click)="ok()">{{ 'OK' | translate}}</button>
+    </footer>
+  </div>
+</div>

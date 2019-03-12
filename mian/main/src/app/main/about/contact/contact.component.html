@@ -1,0 +1,56 @@
+<div class="contact">
+  <div class="contactLink">
+    <h1>Contact us</h1>
+    <div class="icon"></div>
+    <p>Company: <span class="link">M5Stack Inc.</span></p>
+    <p>Sales team: <span class="link">sales@m5stack.com</span> </p>
+    <p>Sales team: <span class="link"> sales@m5stack.com</span></p>
+    <p>Project & Customized service: <span class="link">support@m5stack.com</span> </p>
+    <h1>GET IN TOUCH</h1>
+    <p>If you are interested, please enter your email, we will contact you as soon as possible.</p>
+  </div>
+  <div *ngIf="showform; else elseBlock">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="mode.name" name="name" #name="ngModel"
+          placeholder="Name" autofocus>
+      </div>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="checkError">
+        name is required
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" required [(ngModel)]="mode.email" name="email" #email="ngModel"
+          appCheckEmail placeholder="Email">
+      </div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="checkError">
+        <div *ngIf="email.errors.required">
+          email is required
+        </div>
+        <div *ngIf="email.errors.CheckEmail">
+          E-mail address is invalid
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea type="text" class="form-control" id="message" required [(ngModel)]="mode.message" name="message"
+          #message="ngModel" style="resize: none;" rows="5" placeholder="Message">
+              </textarea>
+      </div>
+      <div *ngIf="message.invalid && (message.dirty || message.touched)" class="checkError">
+        message is required
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid">Submit</button>
+
+    </form>
+  </div>
+  <ng-template #elseBlock>
+      <div class="okloadding">
+          <span>OK</span>
+       </div>
+  </ng-template>
+
+</div>

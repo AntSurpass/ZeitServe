@@ -1,0 +1,8 @@
+<div class="wrapper--message-box" *ngIf="message !== ''">
+  <p 
+    [class.loading]="type === 'loading'"
+    [class.success]="type === 'success'"
+    [class.error]="type === 'error'"
+    [class.warning]="type === 'warning'"
+  >{{ message }}</p>
+</div> 

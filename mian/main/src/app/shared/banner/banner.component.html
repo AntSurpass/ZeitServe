@@ -1,0 +1,16 @@
+<div class="bannershow">
+  <div class="bannerwapper">
+    <div class="banners" #bannerwapper>
+        <img *ngFor="let item of caseList" src="{{item}}" alt="" srcset="">
+    </div>
+  </div>
+  <div class="pre" (click)="pre()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()"></div>
+  <div class="next" (click)="next()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()"></div>
+  <div class="point" *ngIf="show">
+    <ul>
+      <li *ngFor="let item of childList, let i=index" (click)="pointClick(i)" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()"
+        [class.isfc]=" i+1 === x">
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,295 @@
+@import '../../../assets/scss/unit.scss';
+.home_main {
+    position: relative; // top: -154px;
+    // transform: translateY(-154px);
+    // margin-bottom: -123PX;
+    .video {
+
+        video {
+            display: block;
+            min-height: 100%;
+            min-width: 100%;
+            // max-height: 1080px;
+            object-fit: fill;
+        }
+    }
+    .appbanner {
+        display: none;
+        img {
+              vertical-align: top;
+                width: 100%;
+                height: 100%;
+
+        }
+    }
+    .drowWapper {
+        background-color: #eee;
+
+        .drowContainer {
+            display: flex;
+            height: px2rem(75);
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1200px;
+            .drowImg {
+                flex: 1;
+                // height: 80px;
+                height: px2rem(57);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+            }
+            .core {
+                @include bg-image('../../../assets/images/home/core');
+            }
+            .module {
+                @include bg-image('../../../assets/images/home/module');
+            }
+            .lint {
+                @include bg-image('../../../assets/images/home/UNIT');
+            }
+            .application {
+                @include bg-image('../../../assets/images/home/application');
+            }
+        }
+        .drWapper {
+            margin-bottom: px2rem(28);
+            .drowTab {
+                background-color: #666;
+                opacity: 0; // width: 100%;
+                .drowItem {
+                    max-width: 1200px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    .newsItem {
+                        display: inline-block;
+                        width: 279px;
+                        height: 279px;
+                        border-radius: 5px;
+                        box-shadow: 2px 2px 10px #909090;
+                        div {
+                            max-width: 100%;
+                            height: 0;
+                            padding-bottom: 100%; 
+                            overflow: hidden;
+                            a {
+                                display: block;
+                                width: 100%;
+                                height: 279px;
+                            }
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+        
+                    }
+                }
+            }
+        }
+    }
+    .center {
+        // width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        h4 {
+            line-height: 26px;
+            font-size: 26px;
+            margin-bottom: px2rem(10); 
+        }
+        .introduce {
+            margin-bottom: px2rem(40);
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .newsWapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            .newsItem {
+                display: inline-block;
+                width: 279px;
+                height: 279px;
+                border-radius: 5px;
+                box-shadow: 2px 2px 10px #909090;
+                div {
+                    max-width: 100%;
+                    height: 0;
+                    padding-bottom: 100%; 
+                    overflow: hidden;
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 279px;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+            }
+        }
+        .show {
+            display: flex;
+            justify-content: space-between;
+            height: 660px;
+            margin-bottom: 30px;
+            .show-l{
+                width: 585px;
+            }
+            .show-r {
+                flex: 1;
+                margin-left: 30px;
+                .showr-t {
+                    height: 315px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 100%;
+                    }
+                    &.show-first {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+        .desc {
+            display: flex;
+            margin-bottom: 80px;
+            .docu {
+                flex: 1;
+                height: 165px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+                &.mation {
+                    background-image: url('../../../assets/images/home/docs.jpg');
+                }
+                &.com {
+                    background-image: url('../../../assets/images/home/community.jpg');
+                }
+                &.store {
+                    background-image: url('../../../assets/images/home/store.jpg');
+                }
+            }
+        }
+        .stack {
+            .stackb {
+                display: flex;
+                margin: 20px 0;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                div {
+                    height: 90px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center center;
+                    filter: grayscale(100%);
+                    transition: all 0.3s ease-in;
+                    &:hover {
+                        filter: grayscale(0%);
+                    }
+                }
+                .arduino {
+                    width: 140px;
+                    background-image: url('../../../assets/images/Logo/ArduinoUA.jpg');
+                }
+                .hack {
+                    width: 188px;
+                    background-image: url('../../../assets/images/Logo/Hackspark.jpg');
+                }
+                .inex {
+                    width: 180px;
+                    background-image: url('../../../assets/images/Logo/inex.jpg');
+                }
+                .elektor {
+                    width: 211px;
+                    background-image: url('../../../assets/images/Logo/Elektor.gif');
+                }
+                .gravitech {
+                    width: 295px;
+                    background-image: url('../../../assets/images/Logo/Gravitech.png');
+                }
+                .ue {
+                    width: 280px;
+                    background-image: url('../../../assets/images/Logo/Uchi.png');
+                }
+                .switch {
+                    width: 328px;
+                    background-image: url('../../../assets/images/Logo/SwitchScience.gif');
+                }
+            }
+        }
+    }
+    h4 {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px) {
+    .home_main {
+        .center {
+            padding: 0 45px;
+            .drowContainer {
+                .drowImg {
+                }
+            }
+            .newsWapper {
+                .newsItem {
+
+                }
+            }
+            .show {
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .home_main {
+        .video {
+            display: none;
+        }
+        .appbanner {
+            display: block;
+            width: 100%;
+            padding-top: px2rem(40);
+
+            img {
+                vertical-align: top;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .center {
+            .drowContainer {
+                height: px2rem(75);
+                .drowImg {
+                    height: px2rem(52);
+                }
+            }
+            .newsWapper {
+                .newsItem {
+                    width: px2rem(140);
+                    height: px2rem(140);
+                }
+            }
+            .show {
+                display: none;
+            }
+        }
+    }
+}

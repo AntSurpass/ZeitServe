@@ -1,0 +1,14 @@
+<div id="app" class="app" (mousedown)="stopPropagation($event)" >
+  <header>
+    <app-header></app-header>
+  </header>
+  <main>
+    <app-workspace></app-workspace>
+  </main>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>
+<div class="orientation-show" *ngIf="isPhone">
+   <div class="phone-re"></div>
+  </div>

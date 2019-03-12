@@ -1,0 +1,38 @@
+<div class="full-container wrapper-news">
+  <h1>资讯管理面板</h1>
+  <main>
+    <nav>
+      <a routerLink="/admin/new-news">添加资讯</a>
+    </nav>
+    <table class="data-table">
+      <tr>
+        <td>标题</td>
+        <td>分类</td>
+        <td>状态</td>
+        <td>创建时间</td>
+        <td>最后修改时间</td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let news of newsList">
+        <td>{{ news.title }}</td>
+        <td>
+          {{ news.type == 1 ? '活动' : news.type == 2 ? '通知' : '博客' }}
+        </td>
+        <td [class.published]="news.published" [class.un-published]="!news.published">{{ news.published ? '已发布' : '未发布' }}</td>
+        <td>{{ news.create_time | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{ news.last_modified_time | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+          <button 
+            class="btn" 
+            [class.published]="news.published" 
+            [class.un-published]="!news.published"
+            (click)="publish(news)"
+          >{{ news.published ? '取消发布' : '发布' }}</button>
+          <button class="btn edit" (click)="edit(news)">编辑</button>
+          <button class="btn delete" (click)="delete(news)">删除</button>
+        </td>
+      </tr>
+    </table>
+
+  </main>
+</div>

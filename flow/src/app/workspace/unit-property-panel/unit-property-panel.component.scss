@@ -1,0 +1,32 @@
+.wrapper--property--panel {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.88);
+    border: 1px solid #666;
+    z-index: 1000001;
+    padding: 8px;
+
+    &.show {
+        display: block;
+    }
+}
+
+.property.name {
+    font-size: 22px;
+    font-family: Arial;
+}
+
+table {
+    width: 140px;
+    margin-top: 8px;
+    font-family: Arial;
+
+    td {
+        text-align: right;
+        input, select {
+            width: 80px;
+        }
+    }
+}

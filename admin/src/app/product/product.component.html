@@ -1,0 +1,51 @@
+<div class="container">
+  <h1 class="title">产品管理</h1>
+  <div class="btn-bar">
+    <button nz-button nzType="primary" [routerLink]="'/admin/add-product'">
+      <i nz-icon type="plus"></i>
+      <span>新增产品</span>
+    </button>
+  </div>
+  <div class="grid-container">
+    <nz-table #basicTable [nzData]="products" [nzLoading]="loading">
+      <thead>
+        <tr>
+          <th>产品名称</th>
+          <th>产品类型</th>
+          <th>状态</th>
+          <th>创建时间</th>
+          <th>最后修改时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{data.title}}</td>
+          <td>{{data.type == 1 ? '主机' : data.type == 2 ? 'Unit' : data.type == 3 ? '模块' : data.type == 4 ? '配件' : data.type == 5 ? 'Base' : '应用' }}</td>
+          <td>{{data.published ? '已发布' : '未发布'}}</td>
+          <td>{{data.create_time | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+          <td>{{data.last_modified_time | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+          <td>
+            <a
+              class="txt-operator"
+              [class.published]="data.published"
+              [class.unpublished]="!data.published"
+              (click)="publish(data)"
+            >
+              {{data.published ? '取消发布' : '发布'}}
+            </a>
+            <a class="txt-operator edit" (click)="edit(data.productId)">编辑</a>
+            <a
+              class="txt-operator delete"
+              nz-popconfirm
+              nzTitle="确定删除该产品信息?"
+              (nzOnConfirm)="confirmDelete(data.productId)"
+            >
+              删除
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

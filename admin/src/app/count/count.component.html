@@ -1,0 +1,9 @@
+
+<div class="count">
+  <div class="c-item home">主页访问总数：{{data?.home_total_views}}</div>
+  <div class="c-item docs">文档访问总数：{{data?.doc_total_views}}</div>
+  <div class="c-item flow">UIFLOW访问总数：{{data?.uiflow_total_users}}</div>
+  <div class="c-item flow-olin">UIFLOW在线人数：{{data?.uiflow_online_users}}</div>
+</div>
+<div echarts [options]="moption" [merge]="mmerge" [loading]="isloading"  class="chart top"></div>
+<div echarts  [loading]="isloading" [merge]="dmerge" [options]="doption" class="chart top"></div>

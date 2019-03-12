@@ -1,0 +1,12 @@
+<form class="wrapper-login-form">
+  <h1>Login</h1>
+  <div class="inputbox">
+    <img src="../../../assets/images/admin/user.png" alt="user">
+    <input type="text" spellcheck="false" placeholder="用户名" #usernameBox>
+  </div>
+  <div class="inputbox">
+    <img src="../../../assets/images/admin/password.png" alt="password">
+    <input type="password" spellcheck="false" placeholder="密码" #passwordBox>
+  </div>
+  <button class="btn btn-login" (click)="login($event, usernameBox.value, passwordBox.value)">登录</button>
+</form>

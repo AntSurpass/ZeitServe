@@ -1,0 +1,71 @@
+@import '../../../assets/scss/unit.scss';
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #000;
+    z-index: 1;
+}
+
+.banner1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+}
+
+.downWapper {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px px2rem(140);
+    color: #fff; // height: 500px;
+    background-color: #36354D;
+    box-shadow: 2px 2px 10px #666;
+    .downContainer {
+        p {
+            line-height: 40px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: 700px;
+            &+span {
+                margin-left: 100px;
+            }
+        }
+        span {
+            margin-right: 50px;
+            i {
+                display: inline-block;
+                vertical-align: middle;
+                width: 36px;
+                height: 36px;
+                margin-right: 20px;
+            }
+            a {
+                vertical-align: middle;
+                color: #007acc;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .baiduyunpan {
+            background-image: url('../../../assets/images/download/baiduwangpan.png');
+        }
+        .yadi {
+            background-image: url('../../../assets/images/download/yandex.png');
+        }
+        .windows {
+            background-image: url('../../../assets/images/download/windows.png');
+        }
+        .mac {
+            background-image: url('../../../assets/images/download/mac.png');
+        }
+        .linux {
+            background-image: url('../../../assets/images/download/linux.png');
+        }
+    }
+}

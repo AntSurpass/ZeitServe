@@ -1,0 +1,1663 @@
+<div class="wrapper--blockly" (click)="stopPropagation()" (touchstart)="padMethod()">
+  <div id="wrapper_blockly_editor" class="wrapper--blockly-editor" #wrapperBlocklyEditor></div>
+  <div id="blocklyTrashIcon"><i class="trash icon" aria-hidden="true"></i></div>
+  <xml id="wrapper_blockly_toolbox" style="display: none;" #wrapperBlocklyToolbox>
+    <category name="%{BKY_EVENT}" colour="%{BKY_BASIC_HUE}">
+      <block type="basic_on_loop"></block>
+      <block type="button_callback"></block>
+      <block type="button_state"></block>
+    </category>
+    <category colour="%{BKY_COMPONENT_HUE}" name="%{BKY_UI}">
+      <category colour="%{BKY_COMPONENT_TITLE_HUE}" name="%{BKY_TITLE}">
+        <block type="title_set_text">
+          <value name="TEXT">
+            <shadow type="text">
+              <field name="TEXT">Title</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="title_show"></block>
+        <block type="title_hide"></block>
+        <block type="title_set_color"></block>
+        <block type="title_set_color_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="title_set_bgcolor"></block>
+        <block type="title_set_bgcolor_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+
+      <category colour="%{BKY_COMPONENT_LABEL_HUE}" name="%{BKY_LABEL}">
+        <block type="label_set_text">
+          <value name="TEXT">
+            <shadow type="text">
+              <field name="TEXT">Hello M5</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="label_set_position">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="label_set_position_x">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="label_set_position_y">
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="label_set_color"></block>
+        <block type="label_set_color_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="label_set_font">
+        </block>
+        <block type="label_set_mode">
+        </block>
+      </category>
+
+      <category colour="%{BKY_COMPONENT_RECT_HUE}" name="%{BKY_RECT}">
+        <block type="rect_set_size">
+          <value name="WIDTH">
+            <shadow type="math_number">
+              <field name="NUM">30</field>
+            </shadow>
+          </value>
+          <value name="HEIGHT">
+            <shadow type="math_number">
+              <field name="NUM">30</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_size_width">
+          <value name="WIDTH">
+            <shadow type="math_number">
+              <field name="NUM">30</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_size_height">
+          <value name="HEIGHT">
+            <shadow type="math_number">
+              <field name="NUM">30</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_position">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_position_x">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_position_y">
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_bgcolor"></block>
+        <block type="rect_set_bgcolor_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_bordercolor"></block>
+        <block type="rect_set_bordercolor_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rect_set_mode">
+        </block>
+      </category>
+
+      <category colour="%{BKY_COMPONENT_CIRCLE_HUE}" name="%{BKY_CIRCLE}">
+        <block type="circle_set_size">
+          <value name="RADIUS">
+            <shadow type="math_number">
+              <field name="NUM">20</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="circle_set_position">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="circle_set_position_x">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="circle_set_position_y">
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="circle_set_bgcolor"></block>
+        <block type="circle_set_bgcolor_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="circle_set_bordercolor"></block>
+        <block type="circle_set_bordercolor_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="circle_set_mode">
+        </block>
+      </category>
+
+      <category colour="%{BKY_COMPONENT_IMAGE_HUE}" name="%{BKY_IMAGE}">
+        <block type="image_show"></block>
+        <block type="image_hide"></block>
+        <block type="image_set_position">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="image_set_position_x">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="image_set_position_y">
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="image_set_image"></block>
+        <!-- <block type="image_set_mode"> -->
+        <!-- </block> -->
+      </category>
+    </category>
+
+    <category colour="%{BKY_PINS_HUE}" name="%{BKY_HARDWARES}">
+
+      <!-- Speaker -->
+      <category colour="%{BKY_SPEAKER_HUE}" name="%{BKY_SPEAKER}">
+        <block type="speaker_tone">
+          <value name="FREQ">
+            <shadow type="math_number">
+              <field name="NUM">1600</field>
+            </shadow>
+          </value>
+          <value name="TIMEOUT">
+            <shadow type="math_number">
+              <field name="NUM">200</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="speaker_vol">
+          <value name="VOLUME">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="speaker_sing"></block>
+      </category>
+
+      <category colour="%{BKY_RGB_HUE}" name="%{BKY_RGB}">
+        <block type="rgb_set_all"></block>
+        <block type="rgb_set_all_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_set_dir"></block>
+        <block type="rgb_set_dir_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_set">
+          <value name="INDEX">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_set_rgb">
+          <value name="INDEX">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_set_brightness">
+          <value name="BRIGHTNESS">
+            <shadow type="math_number">
+              <field name="NUM">10</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+
+      <category colour="%{BKY_TIMER_HUE}" name="%{BKY_IMU}">
+        <block type="IMU_GET_X"></block>
+        <block type="IMU_GET_Y"></block>
+        <block type="IMU_GET_Z"></block>
+        <block type="IMU_GET_ACC_X"></block>
+        <block type="IMU_GET_ACC_Y"></block>
+        <block type="IMU_GET_ACC_Z"></block>
+        <block type="IMU_IS_LEVEL"></block>
+        <block type="IMU_IS_STAND"></block>
+        <block type="IMU_IS_LEFT_TILT"></block>
+        <block type="IMU_IS_RIGHT_TILT"></block>
+        <!-- <block type="IMU_IS_OTHER_SIDE"></block> -->
+      </category>
+    </category>
+
+    <category colour="%{BKY_PINS_HUE}" name="%{BKY_UNITS}">
+      <!-- ENV -->
+      <category colour="%{BKY_DHT_HUE}" name="%{BKY_ENV}">
+        <block type="dht12_pressure"></block>
+        <block type="dht12_get_temperature"></block>
+        <block type="dht12_get_humidity"></block>
+      </category>
+      <!-- angle -->
+      <category colour="%{BKY_PINS_HUE}" name="%{BKY_ANGLE}">
+        <block type="angle_read"></block>
+      </category>
+      <!-- PIR -->
+      <category colour="%{BKY_SERVO_HUE}" name="%{BKY_PIR}">
+        <block type="pir_read"></block>
+      </category>
+      <!-- RGB Multi -->
+      <category colour="%{BKY_PINS_HUE}" name="%{BKY_NEOPIXEL}">
+        <block type="rgb_multi_set_color">
+          <value name="INDEX">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_multi_set_color_from">
+          <value name="FROM">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <value name="TO">
+            <shadow type="math_number">
+              <field name="NUM">5</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_multi_set_color_from_rgb">
+          <value name="FROM">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <value name="TO">
+            <shadow type="math_number">
+              <field name="NUM">5</field>
+            </shadow>
+          </value>
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_multi_set_color_all"></block>
+        <block type="rgb_multi_set_brightness">
+          <value name="BRIGHTNESS">
+            <shadow type="math_number">
+              <field name="NUM">100</field>
+            </shadow>
+          </value>
+        </block>
+        <!-- <block type="rgb_multi_set_matrix"></block>
+        <block type="rgb_multi_set_matrix_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block> -->
+        <block type="rgb_multi_set_hexagon_matrix"></block>
+        <block type="rgb_multi_set_hexagon_matrix_rgb">
+          <value name="R">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="G">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="B">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <!-- Joystick -->
+      <category colour="%{BKY_DHT_HUE}" name="%{BKY_JOYSTICK}">
+        <block type="joystick_x"></block>
+        <block type="joystick_y"></block>
+        <block type="joystick_press"></block>
+      </category>
+      <!-- Light -->
+      <category colour="%{BKY_SPEAKER_HUE}" name="%{BKY_LIGHT}">
+        <block type="light_a_read"></block>
+        <block type="light_d_read"></block>
+      </category>
+      <!-- Earth -->
+      <category colour="%{BKY_GPIO_HUE}" name="%{BKY_EARTH}">
+        <block type="earth_a_read"></block>
+        <block type="earth_d_read"></block>
+      </category>
+      <!-- Makey -->
+      <category colour="%{BKY_NXT_MOTOR_HUE}" name="%{BKY_MAKEY}">
+        <block type="makey_value"></block>
+        <block type="makey_play_piano"></block>
+        <block type="makey_all_value"></block>
+      </category>
+      <!-- Servo -->
+      <category colour="%{BKY_SERVO_HUE}" name="%{BKY_SERVO}">
+        <block type="servo_unit_write_angle">
+          <value name="ANGLE">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="servo_unit_write_us">
+          <value name="TIME">
+            <shadow type="math_number">
+              <field name="NUM">600</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <!-- Weigh -->
+      <category colour="%{BKY_DAC_HUE}" name="%{BKY_WEIGHT}">
+        <block type="weigh_zero"></block>
+        <block type="weigh_get_weight"></block>
+      </category>
+      <!-- Pulse -->
+      <category colour="%{BKY_RGB_HUE}" name="%{BKY_PULSE}">
+        <block type="pulse_get_ir"></block>
+        <block type="pulse_get_red"></block>
+      </category>
+      <!-- Track -->
+      <category colour="%{BKY_TRACK_HUE}" name="%{BKY_TRACK}">
+        <block type="m5track_get_analog"></block>
+        <block type="m5track_get_digital"></block>
+        <block type="m5track_set_analog">
+          <value name="NUM">
+            <shadow type="math_number">
+              <field name="NUM">10</field>
+            </shadow>
+          </value>
+          <value name="NUM1">
+            <shadow type="math_number">
+              <field name="NUM">10</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <!-- Button -->
+      <category colour="%{BKY_TRACK_HUE}" name="%{BKY_BUTTON}">
+        <block type="unit_button_callback"></block>
+        <block type="unit_button_state"></block>
+      </category>
+      <!-- Dual Button -->
+      <category colour="%{BKY_RGB_HUE}" name="%{BKY_DUAL_BUTTON}">
+        <block type="unit_dual_button_callback"></block>
+        <block type="unit_dual_button_state"></block>
+      </category>
+      <!-- unit Rgb -->
+      <category colour="%{BKY_PINS_HUE}" name="RGB">
+        <block type="rgb_unit_set_color">
+          <value name="INDEX">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_unit_set_color_from">
+          <value name="FROM">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <value name="TO">
+            <shadow type="math_number">
+              <field name="NUM">3</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rgb_unit_set_color_all"></block>
+        <block type="rgb_unit_set_brightness">
+          <value name="BRIGHTNESS">
+            <shadow type="math_number">
+              <field name="NUM">100</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <!-- RELAY -->
+      <category colour="%{BKY_SERVO_HUE}" name="%{BKY_RELAY}">
+        <block type="set_relay_on"></block>
+        <block type="set_relay_off"></block>
+      </category>
+      <!-- ADC -->
+      <category colour="%{BKY_PINS_HUE}" name="ADC">
+        <block type="unit_adc_state"></block>
+      </category>
+      <!-- DAC -->
+      <category colour="%{BKY_DHT_HUE}" name="DAC">
+        <block type="unit_dac_state">
+          <value name="FROM">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <!-- TOF -->
+      <category colour="%{BKY_SPEAKER_HUE}" name="TOF">
+        <block type="unit_tof_state"></block>
+      </category>
+      <!-- NCIR -->
+      <category colour="%{BKY_SPEAKER_HUE}" name="NCIR">
+        <block type="unit_ncir_read"></block>
+      </category>
+      <!-- IR -->
+      <category colour="%{BKY_SPEAKER_HUE}" name="IR">
+        <block type="unit_ir_state"></block>
+        <block type="unit_ir_on"></block>
+        <block type="unit_ir_off"></block>
+      </category>
+      <!-- NXT_IO -->
+      <category colour="%{BKY_DHT_HUE}" name="EXTIO">
+        <block type="extio_set_port"></block>
+        <block type="extio_set_pin"></block>
+        <block type="extio_set_digiWritePort">
+          <value name="FROM">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="extio_set_digiWrite"></block>
+        <block type="extio_set_digiRead"></block>
+        <block type="extio_get_digiReadPort"></block>
+      </category>
+      <!-- COLOR -->
+      <category colour="%{BKY_TIMER_HUE}" name="Color">
+        <block type="color_getR"></block>
+        <block type="color_getG"></block>
+        <block type="color_getB"></block>
+      </category>
+      <!-- FINGER -->
+      <category colour="%{BKY_SPEAKER_HUE}" name="Finger">
+        <block type="finger_get_state"></block>
+        <block type="finger_get_access"></block>
+        <block type="finger_get_id"></block>
+        <block type="finger_removeAll"></block>
+        <block type="finger_remove_user">
+          <value name="ID">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="finger_add_user">
+          <value name="ID">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <value name="ACCESS">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="finger_read"></block>
+      </category>
+    <!-- Rfid -->
+      <category colour="%{BKY_TIMER_HUE}" name="Rfid">
+        <block type="rfid_readStr">
+          <value name="VALUE">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="write_block">
+          <value name="VALUE">
+            <shadow type="text">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <value name="VALUE1">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="rfid_cardOn"></block>
+        <block type="rfid_uid"></block>
+      </category>
+    <!-- LidarCar -->
+    <!-- CardKb -->
+
+    <category colour="%{BKY_TIMER_HUE}" name="CardKB">
+      <block type="cardkb_getkey"></block>
+      <block type="cardkb_getstring"></block>
+    </category>
+
+    </category>
+
+ 
+ <!-- MODULES-->
+    <category colour="%{BKY_MOTOR_HUE}" name="%{BKY_MODULES}">
+
+      <!--lidarcar-->
+      <category colour="%{BKY_SPEAKER_HUE}" name="Lidar Car">
+          <block type="lidarcar_setrgb"></block>
+          <block type="lidarcar_setOnergb">
+            <value name="NUM">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+          <block type="lidarcar_goahead">
+            <value name="NUM">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+         
+    
+          <block type="lidarcar_setStepMotor">
+            <value name="NUM">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="NUM1">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="NUM2">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="NUM3">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+    
+          <block type="lidarcar_setServo">
+            <value name="NUM">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="ANGLE">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+          </block>
+
+          <block type="lidarcar_control">
+            <value name="NUMX">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="NUMY">
+                <shadow type="math_number">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+          </block>
+
+      <block type="lidarcar_drawMap"></block>
+      <block type="lidarcar_getdistance">
+        <value name="NUY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+
+    
+      <!--lorawan-->
+      <category colour="%{BKY_TIMER_HUE}" name="Lorawan">
+        <block type="lorawan_initrx"></block>
+        <block type="lorawan_initp2p">
+          <value name="VALUE">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="lorawan_txt">
+          <value name="VALUE">
+            <shadow type="text">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="lorawan_data"></block>
+      </category>
+
+      <!-- Motor -->
+      <category colour="%{BKY_MOTOR_HUE}" name="%{BKY_STEP_MOTOR}">
+        <block type="motor_instance"></block>
+        <block type="motor_move_xyz">
+          <value name="X">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="Y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="Z">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="SPEED">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="motor_g_code">
+          <value name="TEXT">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+        </block>
+        <block type="motor_set_mode"></block>
+        <block type="motor_lock"></block>
+        <block type="motor_unlock"></block>
+      </category>
+
+      <category colour="%{BKY_SERVO_HUE}" name="%{BKY_SERVO}">
+        <block type="servo_angle">
+          <value name="ANGLE">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="servo_write">
+          <value name="TIME">
+            <shadow type="math_number">
+              <field name="NUM">600</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <category colour="260" name="%{BKY_BALA}">
+        <block type="m5bala_move">
+          <value name="SPEED">
+            <shadow type="math_number">
+              <field name="NUM">50</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="m5bala_turn">
+          <value name="ANGLE">
+            <shadow type="math_number">
+              <field name="NUM">45</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="m5bala_rotate">
+          <value name="ANGLE">
+            <shadow type="math_number">
+              <field name="NUM">45</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="m5bala_get_angle"></block>
+        <block type="m5bala_set_offset">
+          <value name="ANGLEX">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="m5bala_loop"></block>
+      </category>
+      <category colour="%{BKY_NXT_MOTOR_HUE}" name="%{BKY_BALA_MOTOR}">
+        <block type="nxt_init"></block>
+        <block type="nxt_set_pwm">
+          <value name="ANGLE">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="nxt_run">
+          <value name="DISTANCE">
+            <shadow type="math_number">
+              <field name="NUM">500</field>
+            </shadow>
+          </value>
+          <value name="SPEED">
+            <shadow type="math_number">
+              <field name="NUM">255</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="nxt_stop"></block>
+        <block type="nxt_read_encoder"></block>
+      </category>
+      <category colour="%{BKY_LEGO_MOTOR_HUE}" name="%{BKY_LEGO_MOTOR}">
+        <block type="lego_register_motor"></block>
+        <block type="lego_set_pwm">
+          <value name="PWM">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <!-- <block type="lego_set_speed">
+          <value name="SPEED">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block> -->
+        <!-- <block type="lego_set_angle">
+          <value name="ANGLE">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block> -->
+        <!-- <block type="lego_set_angle_zero"></block> -->
+        <block type="lego_stop"></block>
+        <block type="lego_clear"></block>
+        <block type="lego_read_encoder"></block>
+        <!-- <block type="lego_brake"></block> -->
+      </category>
+
+    </category>
+
+    <sep gap="64"></sep>
+
+    <category name="%{BKY_VARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+
+    <category colour="%{BKY_MATH_HUE}" name="%{BKY_MATH}">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="math_constant"></block>
+      <block type="math_modulo"></block>
+      <block type="math_number_property"></block>
+      <block type="math_on_list"></block>
+      <block type="math_random_float"></block>
+      <block type="math_random_int"></block>
+      <block type="math_round"></block>
+      <block type="math_single"></block>
+      <block type="math_trig"></block>
+      <block type="convent_int"></block>
+      <block type="convent_float"></block>
+    </category>
+
+    <category colour="%{BKY_LOOPS_HUE}" name="%{BKY_LOOPS}">
+      <block type="controls_repeat"></block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_forEach"></block>
+      <block type="controls_for"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+
+    <category colour="%{BKY_LOGIC_HUE}" name="%{BKY_LOGIC}">
+      <block type="controls_if"></block>
+      <block type="controls_ifelse"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_null"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_ternary"></block>
+    </category>
+
+    <category colour="%{BKY_LCD_HUE}" name="%{BKY_GRAPHIC}">
+      <block type="lcd_clear"></block>
+      <block type="lcd_fill">
+        <field name="COLOR">#000000</field>
+      </block>
+      <block type="lcd_print">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_setFont"></block>
+      <block type="lcd_pixel">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_line">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="X1">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y1">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_rect">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="WIDTH">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="HEIGHT">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_triangle">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="X1">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y1">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="X2">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y2">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_circle">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="RADIUS">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_ellipse">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="RX">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="RY">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_arc">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="RADIUS">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="THICK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="START">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="END">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+      </block>
+      <block type="lcd_polygon">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="RADIUS">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="SIDES">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="THICK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <field name="COLOR">#ffffff</field>
+        <field name="ROTATE">10</field>
+      </block>
+    </category>
+
+    <category colour="%{BKY_EMOJI_HUE}" name="%{BKY_EMOJI}">
+      <block type="emoji_show"></block>
+      <block type="emoji_set_single"></block>
+      <block type="emoji_change"></block>
+    </category>
+
+    <!-- Timer -->
+    <category colour="%{BKY_TIMER_HUE}" name="%{BKY_TIMER}">
+      <block type="timer_delay">
+        <value name="DELAY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+
+    <category colour="%{BKY_FUNCTION_HUE}" name="%{BKY_FUNCTIONS}" custom="PROCEDURE"></category>
+
+    <category colour="%{BKY_TEXTS_HUE}" name="%{BKY_TEXT}">
+      <block type="text"></block>
+      <block type="text_changeCase"></block>
+      <block type="text_charAt"></block>
+      <block type="text_count"></block>
+      <block type="text_isEmpty"></block>
+      <block type="text_length"></block>
+      <block type="text_print"></block>
+      <block type="text_replace"></block>
+      <block type="text_reverse"></block>
+      <block type="text_trim"></block>
+      <block type="text_prompt"></block>
+      <block type="text_prompt_ext"></block>
+      <block type="convent_str"></block>
+    </category>
+
+    <category colour="%{BKY_LISTS_HUE}" name="%{BKY_LISTS}">
+      <block type="lists_length"></block>
+      <block type="lists_isEmpty"></block>
+      <block type="lists_indexOf"></block>
+      <block type="lists_create_empty"></block>
+      <block type="lists_create_with"></block>
+      <block type="lists_getIndex"></block>
+      <block type="lists_getSublist"></block>
+      <block type="lists_repeat"></block>
+      <block type="lists_reverse"></block>
+      <block type="lists_setIndex"></block>
+      <block type="lists_split"></block>
+    </category>
+
+    <sep gap="64"></sep>
+
+    <category colour="%{BKY_ADVANCED_HUE}" name="%{BKY_ADVANCED}">
+      <!-- PINS -->
+      <category colour="%{BKY_PINS_HUE}" name="%{BKY_PIN}">
+        <block type="pins_analog_read">
+        </block>
+        <block type="pins_analog_write">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">26</field>
+            </shadow>
+          </value>
+          <value name="DUTY">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="pins_digital_read">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="pins_digital_write">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">26</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="pins_set_mode">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">5</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="pins_set_map">
+          <value name="MAP">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="FROM_LOW">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="FROM_HIGH">
+            <shadow type="math_number">
+              <field name="NUM">1023</field>
+            </shadow>
+          </value>
+          <value name="TO_LOW">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="TO_HIGH">
+            <shadow type="math_number">
+              <field name="NUM">4</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <category style="padding-left: 30px;" colour="%{BKY_GPIO_HUE}" name="%{BKY_GPIO}">
+        <block type="gpio_pinout">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="gpio_pinin">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="gpio_pinout_value">
+          <value name="VALUE">
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="gpio_pinin_value"></block>
+      </category>
+      <category colour="%{BKY_PWM_HUE}" name="%{BKY_PWM}">
+        <block type="pwm">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="pwm_freq">
+          <value name="VALUE">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="pwm_duty">
+          <value name="VALUE">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <category colour="%{BKY_ADC_HUE}" name="%{BKY_ADC}">
+        <block type="adc">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="adc_read_var"></block>
+        <block type="adc_width"></block>
+        <block type="adc_read"></block>
+      </category>
+      <category colour="%{BKY_DAC_HUE}" name="%{BKY_DAC}">
+        <block type="dac">
+          <value name="PIN">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="dac_write">
+          <value name="VALUE">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <category colour="%{BKY_UART_HUE}" name="%{BKY_UART}">
+        <block type="uart">
+          <value name="TX">
+            <shadow type="math_number">
+              <field name="NUM">17</field>
+            </shadow>
+          </value>
+          <value name="RX">
+            <shadow type="math_number">
+              <field name="NUM">16</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="uart_read"></block>
+        <block type="uart_read_characters">
+          <value name="NUM">
+            <shadow type="math_number">
+              <field name="NUM">10</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="uart_readline"></block>
+        <block type="uart_readinto"></block>
+        <block type="uart_any"></block>
+        <block type="uart_write_number">
+          <value name="VALUE">
+            <shadow type="math_number">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+        </block>
+        <block type="uart_write_line">
+          <value name="VALUE">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+        </block>
+        <block type="uart_write">
+          <value name="VALUE">
+            <shadow type="text">
+              <field name="TEXT"></field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <category colour="%{BKY_IIC_HUE}" name="%{BKY_IIC}">
+        <block type="iic_set"></block>
+        <block type="iic_scan"></block>
+        <block type="iic_addr">
+          <value name="ADDR">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="iic_read_addr">
+          <value name="ADDR">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="NUM">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="iic_read_addr_from">
+          <value name="ADDR">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="REG">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="NUM">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="i2c_read_byte">
+          <value name="ADDR">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="i2c_read_addr_from_byte">
+          <value name="ADDR">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="REG">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <category colour="#2b90d9" name="%{BKY_EXECUTE}">
+        <block type="execute"></block>
+      </category>
+      <category colour="%{BKY_PINS_HUE}" name="Network">
+        <block type="wifi_connect"></block>
+      </category>
+      <category colour="%{BKY_RGB_HUE}" name="MQTT">
+        <block type="mqtt_set_client">
+          <value name="ID">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+          <value name="SERVER">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+          <value name="PORT">
+            <shadow type="math_number">
+              <field name="NUM">1883</field>
+            </shadow>
+          </value>
+          <value name="USER">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+          <value name="PASSWORD">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+          <value name="KEEPALIVE">
+            <shadow type="math_number">
+              <field name="NUM">300</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="mqtt_sub">
+          <value name="FROM">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+        </block>
+        <block type="mqtt_start"></block>
+        <block type="mqtt_get_topic_data"></block>
+        <block type="mqtt_publish">
+          <value name="FROM">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+          <value name="MSG">
+            <shadow type="text">
+              <field name="NUM"></field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+    </category>
+
+    <sep gap="64"></sep>
+
+    <category colour="%{BKY_REMOTE_HUE}" name="%{BKY_REMOTE}">
+      <block type="remote_set_qrcode">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">72</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">32</field>
+          </shadow>
+        </value>
+        <value name="SIZE">
+          <shadow type="math_number">
+            <field name="NUM">176</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="remote_add_switch"></block>
+      <block type="remote_add_button"></block>
+      <block type="remote_add_slider"></block>
+      <block type="remote_add_label"></block>
+    </category>
+
+    <sep gap="64"></sep>
+
+    <category colour="#00A0C8" name="Custom (Beta)">
+      <button text="Create *.m5b file" web-class="blockly-btn--style" callbackKey="goToBlockMakerHandler"></button>
+      <button text="Open *.m5b file" web-class="blockly-btn--style" callbackKey="addThirdPartyBlockHandler"></button>
+    </category>
+  </xml>
+</div>
+
+<input type="file" id="__openM5BBox" style="display:none" accept=".m5b">

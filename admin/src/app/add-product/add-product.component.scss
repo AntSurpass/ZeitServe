@@ -1,0 +1,21 @@
+nz-form-item {
+    margin-bottom: 12px;
+}
+
+nz-form-label span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.form-button {
+    margin-right: 16px;
+    border: none;
+
+    &.publish {
+        background-color: orange;
+    }
+
+    &.save {
+        background-color: #47b8e0;
+    }
+}

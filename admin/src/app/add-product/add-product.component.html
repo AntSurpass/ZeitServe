@@ -1,0 +1,82 @@
+<div class="container">
+  <h1 class="title">{{mode==='create'?'新增产品':'修改产品信息'}}</h1>
+  <form nz-form [formGroup]="validateForm">
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="type">
+        <span>产品类型</span>
+      </nz-form-label>
+      <nz-form-control>
+        <nz-radio-group formControlName="type" id="type" [nzButtonStyle]="'solid'">
+          <label nz-radio-button nzValue="1">主机</label>
+          <label nz-radio-button nzValue="2">Unit</label>
+          <label nz-radio-button nzValue="3">模块</label>
+          <label nz-radio-button nzValue="4">配件</label>
+          <label nz-radio-button nzValue="5">Base</label>
+          <label nz-radio-button nzValue="6">应用</label>
+        </nz-radio-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="name">
+        <span>产品名称</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="name" id="name">
+        <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">
+          <span>产品名称不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="buy_link" nzRequired>
+        <span>购买链接</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="buy_link" formControlName="buy_link">
+        <nz-form-explain *ngIf="validateForm.get('buy_link').dirty && validateForm.get('buy_link').errors">
+          <span>购买链接不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="doc_link">
+        <span>文档链接</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="doc_link" formControlName="doc_link">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label>
+        <span>封面图片</span>
+      </nz-form-label>
+      <nz-form-control>
+        <nz-upload 
+          class="avatar-uploader"
+          nzAccept="image/png,image/jpeg,image/gif,image/bmp"
+          nzName="cover"
+          nzListType="picture-card"
+          [nzAction]="postUrl"
+          [nzShowUploadList]="false"
+          [nzBeforeUpload]="beforeUpload"
+          [nzHeaders]="headers"
+          (nzChange)="handleChange($event)"
+        >
+          <ng-container *ngIf="!avatarUrl">
+            <i nz-icon type="plus"></i>
+            <div class="ant-upload-text">Upload</div>
+          </ng-container>
+          <img [src]="avatarUrl" class="cover">
+        </nz-upload>
+      </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button class="form-button publish" [nzType]="'primary'" (click)="submitForm(true)">发布</button>
+    <button nz-button class="form-button save" [nzType]="'primary'" (click)="submitForm(false)">保存</button>
+  </form>
+</div>

@@ -1,0 +1,103 @@
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #000;
+    z-index: 1;
+}
+.banner1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+}
+.bannerImg {
+    overflow: hidden;
+    img {
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+    }
+}
+.appbanner {
+    height: 500px;
+    box-shadow: 2px 2px 10px #666666;
+
+}
+.stemWapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    .info {
+        display: flex;
+        padding: 30px;
+        box-shadow: 2px 2px 10px #666666;
+        .dec {
+            width: 561px;
+            height: 420px;
+            margin-right: 30px;
+            background: darkgoldenrod;
+        }
+        .ava {
+            width: 561px;
+            height: 420px;
+            background: cadetblue;
+        }
+    }
+    .core {
+        display: flex;
+        justify-content: space-between;
+        margin: 108px 0;
+        .coreitem {
+            height: 300px;
+            width: 300px;
+            &.blue {
+                background-image: url('../../../../assets/images/STEM/blue.png');
+            };
+            &.yellow {
+                background-image: url('../../../../assets/images/STEM/yellow.png');
+            }
+            &.red {
+                background-image: url('../../../../assets/images/STEM/red.png');
+            }
+        }
+    }
+    .curriculum {
+        text-align: center;
+        .currwapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            // grid-template-columns: repeat(3, 1fr);
+            .curritem {
+                height: 480px;
+                width: 360px;
+                margin-bottom: 20px;
+                box-shadow: 3px 3px 10px #333333;
+                &.rgb {
+                    background-image: url('../../../../assets/images/STEM/rgb.jpg');
+                };
+                &.nexo {
+                    background-image: url('../../../../assets/images/STEM/nex.jpg');
+                };
+                &.pir {
+                    background-image: url('../../../../assets/images/STEM/pir.jpg');
+                };
+                &.remote {
+                    background-image: url('../../../../assets/images/STEM/remote.jpg');
+                };
+                &.earth {
+                    background-image: url('../../../../assets/images/STEM/earth.jpg');
+                };
+                &.more {
+                    background-image: url('../../../../assets/images/STEM/more.jpg');
+                };
+            }
+        }
+    }
+}
+

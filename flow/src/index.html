@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>M5Flow</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- UC强制全屏 --> 
+<meta name="full-screen" content="yes">
+
+<!-- UC应用模式 --> 
+<meta name="browsermode" content="application">
+
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+
+
+<body>
+  <app-root></app-root>
+</body>
+<script>
+  function doSave(value, type, name) {
+    var blob;
+    if (typeof window.Blob == "function") {
+      blob = new Blob([value], { type: type });
+    } else {
+      var BlobBuilder = window.BlobBuilder || window.MozBlobBuilder || window.WebKitBlobBuilder || window.MSBlobBuilder;
+      var bb = new BlobBuilder();
+      bb.append(value);
+      blob = bb.getBlob(type);
+    }
+    var URL = window.URL || window.webkitURL;
+    var bloburl = URL.createObjectURL(blob);
+    var anchor = document.createElement("a");
+    if ('download' in anchor) {
+      anchor.style.visibility = "hidden";
+      anchor.href = bloburl;
+      anchor.download = name;
+      document.body.appendChild(anchor);
+      var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, true);
+      anchor.dispatchEvent(evt);
+      document.body.removeChild(anchor);
+    } else if (navigator.msSaveBlob) {
+      navigator.msSaveBlob(blob, name);
+    } else {
+      location.href = bloburl;
+    }
+  }
+</script>
+
+<!-- M5 Analysis -->
+<script>(function(){var xhr=new XMLHttpRequest();xhr.open("GET","https://web-admin.m5stack.com/api/statistic/platform");xhr.send()})();</script>
+<script>new WebSocket("wss://web-admin.m5stack.com/api");</script>
+
+</html>

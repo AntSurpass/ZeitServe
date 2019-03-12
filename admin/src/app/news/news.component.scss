@@ -1,0 +1,20 @@
+.btn-bar {
+    margin-bottom: 14px;
+}
+
+.txt-operator {
+    margin-right: 12px;
+    font-size: 14px;
+    &.published {
+        color: #f9c00c;
+    }
+    &.unpublished {
+        color: #3ac569;
+    }
+    &.edit {
+        color: #03a6ff;
+    }
+    &.delete {
+        color: #E71D36;
+    }
+}

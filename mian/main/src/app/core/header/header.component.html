@@ -1,0 +1,54 @@
+<header>
+    <div class="headerwapper">
+        <div class="logo">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a routerLink="">HOME</a></li>
+                <li class="exploreLink">
+                        <span><a routerLink="/product/core">PRODUCT</a></span>
+                        <div class="explore">
+                            <div><a routerLink="/product/core">CORE</a></div>
+                            <div><a routerLink="/product/module">MODULE</a></div>
+                            <div><a routerLink="/product/unit">UNIT</a></div>
+                            <div><a routerLink="/product/accessory">ACCESSORY</a></div>
+                        </div>
+                    <!-- <a routerLink="/product">PRODUCT</a> -->
+                </li>
+                <li><a href="https://docs.m5stack.com/#/" target="_blank">DOCS</a></li>
+                <li><a href="http://forum.m5stack.com/" target="_blank">COMMUNITY</a></li>
+                <li><a routerLink="/download">DOWNLOAD</a></li>
+                <li class="exploreLink">
+                    <span>EXPLORE</span>
+                    <div class="explore">
+                        <div><a routerLink="/stem">STEM</a></div>
+                        <div><a routerLink="/uiflow">UI-FLOW</a></div>
+                        <div><a routerLink="/video">VIDEO</a></div>
+                    </div>
+                </li>
+                <li><a routerLink="/news/whole">NEWS</a></li>
+                <li><a routerLink="/about/contact">CONTACT</a></li>
+            </ul>
+
+        </div>
+        <div class="line">
+            <div class="btn" [class.rotate]="hide" (click)="hide = !hide">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="navbtn" *ngIf="hide" @headerAnimation (click)="hide = !hide">
+            <ul>
+                <li><a routerLink="">home</a></li>
+                <li><a routerLink="/product/core">product</a></li>
+                <li><a href="https://docs.m5stack.com/#/"  target="_blank">docs</a></li>
+                <li><a href="http://forum.m5stack.com/"  target="_blank">community</a></li>
+                <li><a routerLink="/news">download</a></li>
+                <li><a routerLink="/news">explore</a></li>
+                <li><a routerLink="/news">news</a></li>
+                <li><a routerLink="/about">contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>

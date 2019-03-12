@@ -1,0 +1,35 @@
+.count {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5em;
+    .c-item {
+        flex: 1;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        min-width: 250px;
+        height: 6em;
+        line-height: 6em;
+        margin: 1em 2em;
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.2s ease-in;
+        box-shadow: 0px 15px 30px 0px rgba(124, 124, 124, 0.15);
+        &.home{
+            background-color: #339933;
+        }
+        &.docs{
+            background-color: #996633;
+        }
+        &.flow{
+            background-color: #1b52a3;
+        }
+        &.flow-olin{
+            background-color: #b87db8;
+        }
+    }
+}
+
+.chart {
+    margin: 0 5em;
+}

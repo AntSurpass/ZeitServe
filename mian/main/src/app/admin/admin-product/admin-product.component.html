@@ -1,0 +1,37 @@
+<div class="full-container wrapper-product">
+  <h1>产品管理面板</h1>
+  <main>
+    <nav>
+      <a routerLink="/admin/new-product">添加产品</a>
+    </nav>
+    <table class="data-table">
+      <tr>
+        <td>标题</td>
+        <td>产品类型</td>
+        <td>状态</td>
+        <td>创建时间</td>
+        <td>最后修改时间</td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let product of productList">
+        <td>{{ product.title }}</td>
+        <td>
+          {{ product.type == 1 ? '主机' : product.type == 2 ? 'Unit' : product.type == 3 ? '模块' : '配件' }}
+        </td>
+        <td [class.published]="product.published" [class.un-published]="!product.published">{{ product.published ? '已发布' : '未发布' }}</td>
+        <td>{{ product.create_time | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{ product.last_modified_time | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+          <button 
+            class="btn" 
+            [class.published]="product.published" 
+            [class.un-published]="!product.published"
+            (click)="publish(product)"
+          >{{ product.published ? '取消发布' : '发布' }}</button>
+          <button class="btn edit" (click)="edit(product)">编辑</button>
+          <button class="btn delete" (click)="delete(product)">删除</button>
+        </td>
+      </tr>
+    </table>
+  </main>
+</div>

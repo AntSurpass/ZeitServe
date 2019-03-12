@@ -1,0 +1,17 @@
+<div class="wrapper--property--panel" [class.show]="(selectedComponent$ | async) !== null" (mousedown)="stopPropagation($event)" #wrapperPropertyPanel>
+  <div class="header">
+      <p class="property name">{{ (selectedComponent$ | async)?.name }}</p>
+      <span class="close" (click)="close()"><svg class="icon" width="16px" height="16.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="#515151" d="M958.356218 161.6398l-97.56565-97.563052L511.17061 413.691709 161.550453 64.076748 63.989399 161.6398 413.60456 511.260357 63.989399 860.880515l97.561054 97.557656 349.620158-349.606167 349.620158 349.606167 97.56565-97.557656L608.741257 511.260357 958.356218 161.6398z" /></svg></span>
+  </div>
+  <table>
+    <tr class="wrapper-property" *ngFor="let prop of selectedComponentProperty">
+      <app-property-item 
+        [propertyItem]="prop"
+        (changePropertyEmitter)="changePropertyHandler($event)"
+        (updateImgEmitter)="updateImgHandler($event)"
+        (changeToDefaultImgEmitter)="changeToDefaultImgHandler()"
+      ></app-property-item>
+    </tr>
+  </table>
+
+</div>

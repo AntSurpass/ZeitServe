@@ -1,0 +1,35 @@
+.property-key, .property-value {
+    font-family: Arial;
+    font-size: 14px;
+    text-align: right;
+}
+
+.property-key {
+    width: 150px;
+    font-size: 18px;
+}
+
+.property-value {
+    input {
+        font-size: 18px;
+        padding-left: 4px;
+        &.patten {
+            border: 1px solid red;
+            outline: 1px solid red
+        }
+    }
+    select {
+        outline: none;
+        border: none;
+        background-color: #FFF;
+        font-size: 18px;
+        padding-left: 4px;
+        max-width: 230px;
+    }
+    .btn--reload-image {
+        margin: 0 6px;
+        cursor: pointer;
+        color: #007ACC;
+        user-select: none;
+    }
+}

@@ -1,0 +1,54 @@
+.wrapper.workspace {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.wrapper--logic-editor {
+    display: flex; // flex-direction: column;
+    width: 100%;
+}
+
+.wrapper--ui-editor-mb {
+    display: flex;
+}
+.ui-editor-show {
+    min-width: 100%;
+}
+.ui-editor-hide {
+    max-width: 0;
+}
+app-ui-editor-mb{
+    width: 100%;
+}
+app-code-editor,
+app-blockly-editor {
+    width: 0;
+    height: 100%; // display: none;
+}
+
+app-code-editor {
+    display: none;
+}
+
+app-code-editor,
+app-blockly-editor {
+    &.active {
+        flex: 1;
+    }
+}
+
+app-code-editor {
+    &.active {
+        display: block;
+    }
+}
+
+// @media only screen and (min-width:320px) and (max-height:767px) {
+// }
+// @media only screen and (min-width:1024px) {
+//     .ui-editor-hide {
+//         display: flex;
+//         max-width: 100%;
+//     }
+// }

@@ -1,0 +1,20 @@
+<div class="wrapper workspace">
+  <ng-container *ngIf="!stack; else elseTemplate">
+      <div class="wrapper--ui-editor">
+          <app-ui-editor></app-ui-editor>
+        </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div class="wrapper--ui-editor-mb" [class.ui-editor-hide]="ismb" [class.ui-editor-show]="!ismb">
+        <app-ui-editor-mb></app-ui-editor-mb>
+    </div>
+  </ng-template>
+  
+
+  <div class="wrapper--logic-editor">
+    <app-blockly-editor [class.active]="(mode$ | async) == 'blockly'"></app-blockly-editor>
+    <app-code-editor [class.active]="(mode$ | async) == 'code'"></app-code-editor>
+  </div>
+</div>
+<app-loading *ngIf="loddingMode"></app-loading>
+

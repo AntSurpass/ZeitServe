@@ -1,0 +1,12 @@
+<div class="proTitle">UNIT</div>
+<div class="proCenter">
+ <div *ngFor="let item of items" class="proitem">
+    <div class="newsImg">
+      <a routerLink="/product/productdetails/{{item.productId}}">
+          <img src="{{item.cover}}" alt="">
+      </a>
+    </div>
+  <span class="itemTitle">{{item.title}}</span>
+  <span class="itemTimer">{{item.last_modified_time | date:fullDate}}</span>
+ </div>
+</div>

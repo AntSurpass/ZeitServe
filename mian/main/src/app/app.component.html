@@ -1,0 +1,21 @@
+
+<div class="appWapper">
+<!-- 顶栏 -->
+<app-header *ngIf="!adminMode" class="appHeader"></app-header>
+        <app-header class="appHeader"></app-header>       
+ <div [@routeAnimation]="getAnimationData(routerOutlet)" class="appRouter">        
+        <router-outlet #routerOutlet="outlet"></router-outlet>
+        </div>
+
+
+
+<!-- 底栏 -->
+<app-footer *ngIf="!adminMode"  class="appFooter"></app-footer>
+
+
+</div>
+
+
+<div class="tips">
+        <app-tips></app-tips>
+</div>

@@ -1,0 +1,88 @@
+<div class="wrapper--setting-panel">
+  <div class="setting-panel">
+    <header>
+      <p>{{ 'SETTING' | translate }}</p>
+    </header>
+    <div class="wapper-scroll">
+    <table>
+      <tr>
+        <td>{{ 'API_KEY' | translate }}</td>
+        <td class="apikey">
+          <input class="td--inputbox" spellcheck="false" type="text" [value]="apikey$ | async | uppercase" (keyup)="enter($event, apikeyBox.value, languageBox.value, categoryBox.value)"
+            (input)="convertUpperCase($event)" (focus)="apifocus()" (blur)="apiblur()" #apikeyBox>
+          <div class="apikey-select" [class.show]="show">
+                <div (click)="selectapi(item)" *ngFor="let item of allapikey">{{item}}</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ 'LANGUAGE' | translate }}</td>
+        <td>
+          <select class="td--inputbox" [value]="storeSrv.defaultLanguage" #languageBox>
+            <option *ngFor="let lang of languageList" [value]="lang.file">{{ lang.name }}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ 'CATEGORY' | translate }}</td>
+        <td>
+          <select class="td--inputbox" [value]="defineType" #categoryBox>
+            <option *ngFor="let cateitem of categoryArr" [value]="cateitem">{{ cateitem == 'core' ? 'Core' : 'Stick' }}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ 'THEME' | translate }}</td>
+        <td class="theme">
+          <div class="clod" (click)="settheme('clod')"></div>
+          <div class="warn" (click)="settheme('warn')"></div>
+          <div class="blank" (click)="settheme('blank')"></div>
+          <div class="pink" (click)="settheme('pink')"></div>
+          <div class="green" (click)="settheme('green')"></div>
+          <!-- <input type="color" name="color" id="color" onchange="changeColor()">  -->
+        </td>
+      </tr>
+      <tr>
+        <td>{{ "FIRMWARE"| translate }}</td>
+        <td class="td--link">
+          <a href="../../../download/M5Burner-flow-only.zip">M5Burner-Flow-For-Windows</a>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="td--link">
+          <a href="../../../download/M5Burner_MacOS.zip">M5Burner-Flow-For-MacOS</a>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ 'DOCS' | translate }}</td>
+        <td class="td--link">
+          <a target="_blank" href="../../../download/M5GO_User_Manual_cn.pdf">M5GO-User-Manual-Chinese</a>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="td--link">
+          <a target="_blank" href="../../../download/M5GO_User_Manual_en.pdf">M5GO-User-Manual-English</a>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="td--link">
+          <a target="_blank" href="../../../download/M5GO_User_Manual_jp.pdf">M5GO-User-Manual-Japanese</a>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="td--link">
+          <a target="_blank" href="../../../download/M5GO_User_Manual_ru.pdf">M5GO-User-Manual-Russian</a>
+        </td>
+      </tr>
+    </table>
+    </div> 
+    <footer>
+      <button class="btn cancel" (click)="cancel()">{{ 'CANCEL' | translate }}</button>
+      <button class="btn ok" (click)="ok(apikeyBox.value, languageBox.value, categoryBox.value)">{{ 'OK'| translate }}</button>
+    </footer>
+  </div>
+</div>

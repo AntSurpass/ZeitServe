@@ -1,0 +1,14 @@
+.appWapper {
+    display:flex;
+    flex-flow:column;
+    min-height:100vh;
+    .appHeader {
+        // flex: 200px;
+    }
+    .appRouter {
+        flex: 1;
+    }
+    .appFooter {
+        
+    }
+}

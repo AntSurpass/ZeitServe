@@ -1,0 +1,7 @@
+<div id="wrapper_ui_editor" [class.hide]="!(workspaceVisibility$ | async)" class="wrapper--ui-editor" #wrapperUIEditor></div>
+
+<button class="btn--collapse" (click)="toggleVisibility()">{{ ((workspaceVisibility$ | async) ? "HIDEUI" : "SHOWUI") | translate}}</button>
+
+<app-property-panel></app-property-panel>
+
+<app-unit-property-panel></app-unit-property-panel>

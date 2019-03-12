@@ -1,0 +1,19 @@
+<div class="full-container">
+  <h1>留言面板</h1>
+  <div class="wrapper-table">
+    <table>
+      <tr>
+        <td class="datetime">留言时间</td>
+        <td class="name">名字</td>
+        <td class="email">邮箱地址</td>
+        <td class="message">留言内容</td>
+      </tr>
+      <tr *ngFor="let msg of messageList">
+        <td>{{ msg.datetime | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{ msg.name }}</td>
+        <td>{{ msg.email }}</td>
+        <td>{{ msg.message }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

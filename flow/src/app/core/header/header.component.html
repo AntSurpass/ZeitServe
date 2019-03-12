@@ -1,0 +1,142 @@
+<div class="wrapper">
+  <img class="img--logo" src="../../../assets/images/flow_logo.png" alt="logo">
+  <span class="txt--version">{{ version }}</span>
+
+  <div class="info--project">
+    <img class="img" src="../../../assets/images/file.png" alt="Project">
+    <span class="txt--project">{{ 'PROJECT' | translate }}</span>
+    <input class="input--project" spellcheck="false" type="text" [value]="(projectName$ | async)" (input)="changeProjectName($event)">
+  </div>
+
+  <div class="top-nav" (click)="hideExample()">
+    <button class="btn blockly" [class.active]="(mode$ | async) === 'blockly'" (click)="setMode('blockly')">
+      <img src="../../../assets/images/puzzle.png" alt="Blockly">
+      <span>{{ 'Blockly' }}</span>
+    </button>
+    <button class="btn code" [class.active]="(mode$ | async) === 'code'" (click)="setMode('code')">
+      <img src="../../../assets/images/code.png" alt="Python">
+      <span>{{ 'Python' }}</span>
+    </button>
+  </div>
+
+  <div class="list--btn">
+      <span>
+          <a href="http://forum.m5stack.com/category/5/uiflow" target="_blank">
+            <img src="../../../assets/images/luntan.png" alt="FORUM" title="FORUM">
+          </a>
+          </span>
+      <span>
+        <a href="https://m5stack.github.io/UIFlow_doc/" target="_blank">
+          <img src="../../../assets/images/doc.png" alt="DOCS" title="DOCS">
+        </a>
+        </span>
+    <span (click)="showExample()"  [class.isstick]="stick">
+      <img src="../../../assets/images/example.png" alt="Examples" title="EXAMPLES">
+    </span>
+    <span (click)="undo()">
+      <img src="../../../assets/images/undo.png" alt="Undo" title="UNDO">
+    </span>
+    <span (click)="redo()">
+      <img src="../../../assets/images/redo.png" alt="Redo" title="REDO">
+    </span>
+    <span (click)="openResourceManager()">
+      <img src="../../../assets/images/cloud_open.png" alt="closeDropdownListOpen Cloud" title="MANAGER">
+    </span>
+    <span (click)="execCode()" class="mb-show">
+      <img src="../../../assets/images/play.png" alt="Run" title="RUN">
+    </span>
+    <button class="btn--more mb-show" (click)="openDropdownList()" (blur)="closeDropdownList($event)">
+      <img src="../../../assets/images/moreclass.png" alt="More">
+    </button>
+  </div>
+
+  <div class="dropdown--list" [@dropdownAnim]="dropdownState">
+    <ul>
+      <li (mousedown)="openM5F()">
+        <img src="../../../assets/images/open.png" alt="Open">
+        <span>{{ "OPEN" | translate }}</span>
+        <input id="__openM5FBox" type="file" style="display:none;" accept=".m5f">
+      </li>
+      <li (mousedown)="saveM5F()">
+        <img src="../../../assets/images/save.png" alt="Save">
+        <span>{{ 'SAVE' | translate }}</span>
+      </li>
+
+      <li (mousedown)="uploadCode()">
+        <img src="../../../assets/images/download.png" alt="Download">
+        <span>{{ 'DOWNLOAD' | translate }}</span>
+      </li>
+
+      <li class="pc-hide">
+        <a href="https://m5stack.github.io/UIFlow_doc/" target="_blank">
+          <img src="../../../assets/images/doc.png" alt="Examples">
+         <span>{{ 'DOC' | translate }}</span>
+        </a>
+      </li>
+      <li (click)="showExample()" class="pc-hide" [class.isstick]="stick">
+        <img src="../../../assets/images/example.png" alt="Examples">
+        <span>{{ 'EXAMPLE' | translate }}</span>
+      </li>
+      <li (click)="openResourceManager()" class="pc-hide">
+        <img src="../../../assets/images/cloud_open.png" alt="closeDropdownListOpen Cloud">
+        <span>{{ 'MANNAGER' | translate }}</span>
+      </li>
+
+      <li (mousedown)="openSettingPanel($event)">
+        <img src="../../../assets/images/setting.png" alt="Setting">
+        <span>{{ 'SETTING' | translate }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="wrapper--example" (click)="hideExample()" [@dropdownAnim]="exampleVisibility ? 'show':'hide'">
+  <h1 class="title" (click)="stopPropagation($event)">{{ 'Examples'| translate }}</h1>
+  <div class="example-list" (click)="stopPropagation($event)">
+    <div class="example-item" (click)="showExampleDetail($event, example)" *ngFor="let example of exampleList">
+      <img draggable="false" [src]="'../../../assets/images/examples/' + example.icon" alt="example">
+      <p>{{ example.title }}</p>
+    </div>
+  </div>
+  <div class="example-detail" [@dropdownAnim]="exampleDetail !== null ? 'show':'hide'" (click)="stopPropagation($event)">
+    <h1 class="txt--title">{{ exampleDetail?.title }}</h1>
+    <p class="txt--description">{{ exampleDetail?.description }}</p>
+    <p class="txt--required bolder" *ngIf="exampleDetail?.required.length > 0">{{ 'Required : ' }}</p>
+    <p class="txt--required" *ngFor="let required of exampleDetail?.required">
+      <span>{{ 'Connect the Unit ' }}</span>
+      <span class="keyword">{{ required.unit }}</span>
+      <span>{{ ' to the port ' }}</span>
+      <span class="keyword">{{ required.port }}</span>
+    </p>
+    <p class="txt--required" *ngFor="let other of exampleDetail?.others">{{ other }}</p>
+    <p class="txt--author" *ngIf="exampleDetail?.author"><span class="author-info">Thanks for <span class="author">{{ exampleDetail?.author }}</span></span></p>
+    <footer>
+      <button class="btn load" (click)="runExample($event)">Load</button>
+    </footer>
+  </div>
+  
+</div>
+
+<div class="eweima" *ngIf="erweima$ | async">
+    <span (click)="showQRCode()">
+      <img src="../../../assets/images/erweima.svg" alt="QRCode">
+      <div class="wrapper--qrcode" *ngIf="(remoteKey$ | async) !== '' && isShowQRcode">
+        <qrcode [qrdata]="(remoteKey$ | async)" [size]="128" [level]="'M'"></qrcode>
+        <button class="btn-clipboard" (click)="copyQRcodeUrl()">{{ 'Copy Url' }}</button>
+        <span class="tip--copy" *ngIf="copyTip !== ''">{{ copyTip }}</span>
+      </div>
+    </span>
+</div>
+
+<div class="float-btn">
+    <button class="btn blockly" [class.active]="(mode$ | async) === 'uieditor'" (click)="setuieditorMode('uieditor')">
+        <img src="../../../assets/images/pro.png" alt="uieditor">
+      </button>
+    <button class="btn blockly" [class.active]="(mode$ | async) === 'blockly'" (click)="setMBMode('blockly')">
+        <img src="../../../assets/images/puzzle.png" alt="Blockly">
+      </button>
+      <button class="btn code" [class.active]="(mode$ | async) === 'code'" (click)="setMBMode('code')">
+        <img src="../../../assets/images/code.png" alt="Python">
+      </button>
+</div>
+<app-loading *ngIf="loddingMode"></app-loading>

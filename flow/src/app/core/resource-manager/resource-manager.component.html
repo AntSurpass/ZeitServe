@@ -1,0 +1,47 @@
+<div class="wrapper--resource-manager">
+  <div class="resource-manager">
+    <header>
+      <p>{{ 'RESOURCEMANAGER' | translate }}</p>
+    </header>
+
+    <div class="main">
+      
+      <div class="file-type">
+        <a [class.selected]="selectedFileType === 'images'" (click)="selectFile('images')">{{ 'IMAGES' | translate }}</a>
+        <span>|</span>
+        <a [class.selected]="selectedFileType === 'blocklys'" (click)="selectFile('blocklys')">{{ 'BLOCKLYS' | translate }}</a>
+      </div>
+
+      <ul class="ul--data" *ngIf="selectedFileType === 'blocklys'">
+        <p class="txt--no-data" *ngIf="(deviceInfo$ | async)?.blocklys?.length === 0">{{ 'NODATE' | translate }}</p>
+        <li class="list-file" *ngFor="let blockly of (deviceInfo$ | async)?.blocklys">
+          <span>{{ blockly }}</span>
+          <button class="btn delete" (click)="deleteM5FHandler(blockly)">{{ 'DELETE' | translate  }}</button>
+          <button class="btn load" (click)="loadM5FHandler(blockly)">{{ 'Load' }}</button>
+        </li>
+      </ul>
+
+      <ul class="ul--data" *ngIf="selectedFileType === 'images'">
+        <div>
+          <button class="btn--add" (click)="uploadImgHandler()" [disabled]="uploading">{{ 'ADDIMG' | translate }}</button>
+          <input id="__uploadImgBox" type="file" multiple="false" accept="image/bmp,image/jpeg" style="display:none">
+        </div>
+        <p class="txt--no-data" *ngIf="(deviceInfo$ | async)?.resources?.length === 0 && uploadingFile === ''">{{ 'NODATE' | translate }}</p>
+        <li class="list-file" *ngFor="let file of (deviceInfo$ | async)?.resources">
+          <span>{{ file.filename }}</span>
+          <button class="btn delete" (click)="deleteImageHandler(file.filename)">{{ 'DELETE' | translate }}</button>
+        </li>
+        <li class="list-file uploading" *ngIf="uploadingFile !== ''">
+          <span>{{ uploadingFile }}</span>
+          <button class="btn--disabled" disabled>{{ 'UPLOAD' | translate }}</button>
+        </li>
+      </ul>
+
+    </div>
+
+    <footer>
+      <button class="btn cancel" (click)="cancel()">{{ 'CANCEL'| translate }}</button>
+      <button class="btn ok" (click)="refresh()">{{ 'RELOAD' | translate }}</button>
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="wrapper-new-video">
+  <h3>标题</h3>
+  <input class="inputbox-title" type="text" spellcheck="false" #titleBox [value]="video?.title">
+  <h3>封面</h3>
+  <img 
+    class="img-preview" 
+    [src]="mode=='create' || cover.indexOf('/images/blank/no-video.png') > -1 ? cover : '/images/video/' + cover"
+    alt="点击此处上传图片"
+    (click)="handleUploadCover(imgRef, coverBox)"
+    #imgRef
+  >
+  <input class="inputbox-file" type="file" style="display: none" #coverBox>
+  <h3>优酷URL</h3>
+  <input class="inputbox-title" type="text" spellcheck="false" #youkuBox [value]="video?.youku">
+  <h3>Youtube URL</h3>
+  <input class="inputbox-title" type="text" spellcheck="false" #youtubeBox [value]="video?.youtube">
+  <div class="btn-list">
+    <button class="btn publish" (click)="publish(true)">发布</button>
+    <button class="btn save" (click)="publish(false)">保存</button>
+  </div>
+</div>

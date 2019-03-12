@@ -1,0 +1,278 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --main-hue: 221;
+    --bg-color: hsl(var(--main-hue), 50%, 48.24%);
+    --blockCodeBtn-color: hsl( calc( var(--main-hue) - 19 ), 100%, 38%);
+    --blockCodeBtnFocus-color: hsl(  calc( var(--main-hue) - 30 ), 100%, 43%);
+}
+
+:root[theme='clod'] {
+    --main-hue: 221;
+    --bg-color: hsl(var(--main-hue), 50%, 48.24%);
+    --blockCodeBtn-color: hsl( calc( var(--main-hue) - 19 ), 100%, 38%);
+    --blockCodeBtnFocus-color: hsl(  calc( var(--main-hue) - 30 ), 100%, 43%);
+}
+
+:root[theme='warn'] {
+    --main-hue: 32;
+    --bg-color: hsl(var(--main-hue), 100%, 50%);
+    --blockCodeBtn-color: hsl( calc( var(--main-hue) + 17 ), 29%, 44%);
+    --blockCodeBtnFocus-color: hsl( calc( var(--main-hue) + 17 ), 100%, 50%);
+}
+
+:root[theme='blank'] {
+    --main-hue: 0;
+    --bg-color: hsl(var(--main-hue), 0%, 21%);
+    --blockCodeBtn-color: hsl(  108, 7%, 14%);
+    --blockCodeBtnFocus-color: hsl( 105, 1%, 40%);
+}
+
+:root[theme='pink'] {
+    --main-hue: 1;
+    --bg-color: hsl(var(--main-hue), 100%, 85%);
+    --blockCodeBtn-color: hsl(351, 70%, 78%);
+    --blockCodeBtnFocus-color: hsl( 340, 100%, 75%);
+}
+:root[theme='green'] {
+    --main-hue: 105;
+    --bg-color: hsl(var(--main-hue), 96%, 36%);
+    --blockCodeBtn-color: hsl( 120, 44%, 64%);
+    --blockCodeBtnFocus-color: hsl(  120, 50%, 38%);
+}
+
+@font-face {
+    font-family: 'Comic';
+    src: url('./assets/fonts/comic.ttf') format('truetype'), url('./assets/fonts/comic.eot'), url('./assets/fonts/comic.otf'), url('./assets/fonts/comic.woff'), url('./assets/fonts/comic.svg')
+}
+
+@font-face {
+    font-family: 'DejaVuSans';
+    src: url('./assets/fonts/DejaVuSans.ttf') format('truetype'), url('./assets/fonts/DejaVuSans.eot'), url('./assets/fonts/DejaVuSans.otf'), url('./assets/fonts/DejaVuSans.woff'), url('./assets/fonts/DejaVuSans.svg')
+}
+
+@font-face {
+    font-family: 'Ubuntu-C';
+    src: url('./assets/fonts/Ubuntu-C.ttf') format('truetype'), url('./assets/fonts/Ubuntu-C.eot'), url('./assets/fonts/Ubuntu-C.otf'), url('./assets/fonts/Ubuntu-C.woff'), url('./assets/fonts/Ubuntu-C.svg')
+}
+
+@font-face {
+    font-family: 'SourceCode';
+    src: url('./assets/fonts/SourceCode.ttf') format('truetype')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+app-root,
+.app {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #535353;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #EDEDED;
+}
+
+.blocklyTreeRow {
+    padding-left: 0 !important;
+    height: 42px;
+    &:hover {
+        .blocklyTreeLabel {
+            color: #1e1e1e;
+        }
+    }
+}
+
+.blocklyTreeLabel {
+    line-height: 42px;
+    font-size: 18px;
+    &:hover {
+        color: #1e1e1e;
+    }
+}
+
+.blocklyTreeRoot {
+    padding: 0;
+}
+
+.blocklySvg {
+    background-color: #1e1e1e;
+    border: none;
+}
+
+.blocklyToolboxDiv {
+    min-width: 160px;
+    background-color: #3f3f3f;
+    color: white;
+    padding-bottom: 50px;
+}
+
+.blocklyFlyoutBackground {
+    fill: #333333;
+}
+
+.blocklyMainBackground {
+    stroke: none;
+}
+
+.blocklyTreeIconClosedLtr {
+    background-position: -32px -17px;
+}
+
+.blocklyTreeIconOpen {
+    background-position: -16px -17px;
+}
+
+div[role=treeitem] {
+    div[role=group]:not(:first-child) {
+        padding-left: 12px;
+        div {
+            &:hover {
+                color: #1e1e1e;
+            }
+        }
+    }
+}
+
+.blocklyTreeIconVar {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/variables.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconMath {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/math.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconText {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/text.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconLoop {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/loops.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconLogic {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/logic.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconLists {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/lists.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconGraphic {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/graphic.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconEmoji {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/emoji.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconTimer {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/timer.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconFunction {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    background-image: url('./assets/images/blockly_icon/fun.png');
+    background-position: center center !important;
+}
+
+.blocklyTreeIconRemote {
+    background-image: url('./assets/images/blockly_icon/fun.png');
+    background-position: center center !important;
+}
+
+.blockly-btn--style.blocklyFlyoutButton {
+    >.blocklyFlyoutButtonBackground {
+        fill: rgb(0, 160, 200);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}

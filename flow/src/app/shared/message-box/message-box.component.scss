@@ -1,0 +1,33 @@
+.wrapper--message-box {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999998;
+    transition: all .025s ease;
+
+    p {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 18px;
+        color: #FFFFFF;
+        font-family: Arial;
+
+        &.warning {
+            background-color: #F6B352;
+        }
+
+        &.success {
+            background-color: #67D5B5;
+        }
+
+        &.error {
+            background-color: #ff4e50;
+        }
+
+        &.loading {
+            background-color: #008c9e;
+        }
+    }
+}

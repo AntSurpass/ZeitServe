@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="title">视频管理</h1>
+  <div class="btn-bar">
+    <button nz-button nzType="primary" [routerLink]="'/admin/add-video'">
+      <i nz-icon type="plus"></i>
+      <span>新增视频</span>
+    </button>
+  </div>
+  <div class="grid-container">
+    <nz-table #basicTable [nzData]="videos" [nzLoading]="loading">
+      <thead>
+        <tr>
+          <th>标题</th>
+          <th>状态</th>
+          <th>创建时间</th>
+          <th>最后修改时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{data.title}}</td>
+          <td>{{data.published ? '已发布' : '未发布'}}</td>
+          <td>{{data.create_time | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+          <td>{{data.last_modified_time | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+          <td>
+            <a
+              class="txt-operator"
+              [class.published]="data.published"
+              [class.unpublished]="!data.published"
+              (click)="publish(data)"
+            >
+              {{data.published ? '取消发布' : '发布'}}
+            </a>
+            <a class="txt-operator edit" (click)="edit(data.videoId)">编辑</a>
+            <a
+              class="txt-operator delete"
+              nz-popconfirm
+              nzTitle="确定删除该视频信息?"
+              (nzOnConfirm)="confirmDelete(data.videoId)"
+            >
+              删除
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

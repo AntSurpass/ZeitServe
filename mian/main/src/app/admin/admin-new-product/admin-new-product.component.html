@@ -1,0 +1,37 @@
+<div class="wrapper-new-news">
+  <h2>标题</h2>
+  <input class="inputbox-title" type="text" spellcheck="false" #titleBox [value]="product?.title">
+
+  <h3>封面</h3>
+  <img 
+    class="img-preview" 
+    [src]="mode=='create' || cover.indexOf('/images/blank/no-cover.jpg') > -1 ? cover : '/images/product/' + cover"
+    alt="点击此处上传图片"
+    (click)="handleUploadCover(imgRef, coverBox)"
+    #imgRef
+  >
+  <input class="inputbox-file" type="file" style="display: none" #coverBox>
+
+  <h3>分类</h3>
+  <form #typeForm>
+    <input id="radio_core" name="type" type="radio" checked value="1">
+    <label for="radio_core">主机</label>
+    <input id="radio_unit" name="type" type="radio" value="2">
+    <label for="radio_unit">Unit</label>
+    <input id="radio_module" name="type" type="radio" value="3">
+    <label for="radio_module">模块</label>
+    <input id="radio_accessory" name="type" type="radio" value="4">
+    <label for="radio_accessory">配件</label>
+  </form>
+  <h3>正文</h3>
+  <quill-editor
+    [style]="{height:'auto',width:'100%','min-height':'360px'}"
+    [placeholder]="'此处输入正文'"
+    strict="false"
+    #quill
+  ></quill-editor>
+  <div class="btn-list">
+    <button class="btn publish" (click)="publish(true)">发布</button>
+    <button class="btn save" (click)="publish(false)">保存</button>
+  </div>
+</div>

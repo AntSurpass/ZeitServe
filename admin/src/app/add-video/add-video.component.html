@@ -1,0 +1,69 @@
+<div class="container">
+  <h1 class="title">{{mode==='create'?'新增视频':'修改视频信息'}}</h1>
+  <form nz-form [formGroup]="validateForm">
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="title">
+        <span>标题</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="title" id="title">
+        <nz-form-explain *ngIf="validateForm.get('title').dirty && validateForm.get('title').errors">
+          <span>标题不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="video_link" nzRequired>
+        <span>视频链接</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="video_link" formControlName="video_link">
+        <nz-form-explain *ngIf="validateForm.get('video_link').dirty && validateForm.get('video_link').errors">
+          <span>视频链接不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- <nz-form-item>
+      <nz-form-label nzFor="youku_link" nzRequired>
+        <span>优酷链接</span>
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input id="youku_link" formControlName="youku_link">
+        <nz-form-explain *ngIf="validateForm.get('youku_link').dirty && validateForm.get('youku_link').errors">
+          <span>优酷链接不能为空</span>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item> -->
+
+    <nz-form-item>
+      <nz-form-label>
+        <span>封面图片</span>
+      </nz-form-label>
+      <nz-form-control>
+        <nz-upload 
+          class="avatar-uploader"
+          nzAccept="image/png,image/jpeg,image/gif,image/bmp"
+          nzName="cover"
+          nzListType="picture-card"
+          [nzAction]="postUrl"
+          [nzShowUploadList]="false"
+          [nzBeforeUpload]="beforeUpload"
+          [nzHeaders]="headers"
+          (nzChange)="handleChange($event)"
+        >
+          <ng-container *ngIf="!avatarUrl">
+            <i nz-icon type="plus"></i>
+            <div class="ant-upload-text">Upload</div>
+          </ng-container>
+          <img [src]="avatarUrl" class="cover">
+        </nz-upload>
+      </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button class="form-button publish" [nzType]="'primary'" (click)="submitForm(true)">发布</button>
+    <button nz-button class="form-button save" [nzType]="'primary'" (click)="submitForm(false)">保存</button>
+  </form>
+</div>

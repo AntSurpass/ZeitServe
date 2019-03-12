@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <span class="txt--info" (click)="openSettingPanel()">
+    <span class="txt--key">{{ "API_KEY" | translate}}</span>
+    <img src="../../../assets/images/key.png" alt="Key">
+    <span class="txt--key">{{ (apikey$ | async) || 'Unknow' }}</span>
+  </span>
+  <span class="tips--info">
+    <span *ngIf="storeSrv.connectStatus === 'DISCONNECTED'">
+      <span class="txt--bracket">[ <span class="status status--disconnected">{{ storeSrv.connectStatus | translate}}</span> ]</span>
+    </span>
+    <span *ngIf="storeSrv.connectStatus === 'CONNECTED'">
+      <span class="txt--bracket">[ <span class="status status--connected">{{ storeSrv.connectStatus | translate}}</span> ]</span>
+      <span class="txt--version">{{ 'VERSION' | translate }} {{ (storeSrv.deviceInfo | async)?.version }}</span>
+    </span>
+    <span *ngIf="storeSrv.connectStatus === 'CONNECTING'">
+      <span class="txt--bracket">[ <span class="status status--connecting">{{ storeSrv.connectStatus | translate}}</span> ]</span>
+    </span>
+  </span>
+  <span class="btn--refresh" (click)="refreshStatus()">
+    <img src="../../../assets/images/loop.png" alt="Refresh">
+  </span>
+  <span *ngIf="(mode$ | async) === 'code'" class="btn--codelock" (click)="toggleCodeLock()">
+    <img *ngIf="(codeLock$ | async)" src="../../../assets/images/lock.png" alt="lock">
+    <img *ngIf="!(codeLock$ | async)" src="../../../assets/images/unlock.png" alt="lock">
+    <span class="txt--lock">{{ 'CodeLock :' }}</span>
+    <span class="txt--lock">{{ (codeLock$ | async) ? 'ON' : 'OFF' }}</span>
+  </span>
+</div>

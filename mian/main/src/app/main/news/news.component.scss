@@ -1,0 +1,57 @@
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #000;
+}
+.banner1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+}
+.bannerImg {
+    overflow: hidden;
+    img {
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    display: flex;
+    aside {
+       width: 286px;
+       min-height: 700px;
+       h3 {
+           margin: 80px 0 50px 0;
+           font-size: 34px;
+           line-height: 34px;
+           font-family: "Technical";
+       }
+       ul {
+          padding: 0;
+       }
+       li {
+        list-style: none;
+        margin-bottom: 24px;
+        a {
+            text-decoration: none;
+            color: #999;
+            &.active {
+                color: #000;
+                font-weight: 700;
+            }
+        }
+    }
+    }
+    main {
+        flex: 1;
+    }
+}

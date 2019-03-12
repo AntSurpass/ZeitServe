@@ -1,0 +1,32 @@
+<div class="banner"></div>
+<div class="banner1"></div>
+<div class="bannerImg">
+  <img src="/images//banner-stem.jpg" alt="">
+</div>
+<div class="stemWapper">
+  <div class="info">
+    <div class="dec"></div>
+    <div class="ava"></div>
+  </div>
+  <div class="core">
+    <div class="coreitem blue"></div>
+    <div class="coreitem yellow"></div>
+    <div class="coreitem red"></div>
+  </div>
+  <div class="appbanner">
+      <app-banner [show]="false" [count]="caseList?.length">
+          <img *ngFor="let item of caseList" src="{{item}}" alt="" srcset="">
+     </app-banner>
+  </div>
+  <div class="curriculum">
+    <h1>CURRICULUM</h1>
+    <div class="currwapper">
+      <div class="curritem rgb"></div>
+      <div class="curritem nexo"></div>
+      <div class="curritem pir"></div>
+      <div class="curritem earth"></div>
+      <div class="curritem remote"></div>
+      <div class="curritem more"></div>
+    </div>
+  </div>
+</div>

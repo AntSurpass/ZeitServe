@@ -1,0 +1,18 @@
+<div class="banner"></div>
+<div class="banner1"></div>
+<div class="bannerImg">
+  <img src="/images/banner-video.jpg" alt="">
+</div>
+<div  class="videoWapper">
+  <h4>VIDEO</h4>
+  <div class="videoContainer">
+    <div *ngFor="let item of items" class="item">
+      <div class="ItemImg">
+        <img src="{{item.cover}}" alt="">
+      </div>
+      <p>{{item.title}}</p>
+      <span class="youku videoLink"><a href="{{item.youku}}" target="_blank">youku</a></span>
+      <span class="youguan videoLink"><a href="{{item.youtube}}" target="_blank">youtube</a></span>
+    </div>
+  </div>
+</div>

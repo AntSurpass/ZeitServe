@@ -1,0 +1,20 @@
+<nz-layout>
+  <nz-header>
+    <h1 class="title">M5Stack 管理后台</h1>
+  </nz-header>
+  <nz-layout>
+    <nz-sider>
+      <ul nz-menu [nzTheme]="'dark'">
+        <li nz-menu-item [routerLink]="'/admin'">留言管理</li>
+        <li nz-menu-item [routerLink]="'/admin/product'">产品管理</li>
+        <li nz-menu-item [routerLink]="'/admin/news'">资讯管理</li>
+        <li nz-menu-item [routerLink]="'/admin/video'">视频管理</li>
+        <li nz-menu-item [routerLink]="'/admin/count'">统计管理</li>
+        <!-- <li nz-menu-item>图片管理</li> -->
+      </ul>
+    </nz-sider>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
